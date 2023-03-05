@@ -5,4 +5,4 @@ def index(request):
     """
     Función vista para la pagina de inicio del sitio
     """
-    return render(request, 'productos.html')
+    return render(request, 'index.html')

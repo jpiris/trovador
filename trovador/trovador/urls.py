@@ -22,9 +22,8 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('catalogo/', include('catalogo.urls')),
-    #path('contacto/', TemplateView.as_view(template_name='trovador\\estaticas\\contacto.html'), name='contacto'),
-    path('', RedirectView.as_view(url='/catalogo/', permanent=True)),
+    path('', include('catalogo.urls')),
+    #path('', RedirectView.as_view(url='', permanent=True)),
     ]
 
 urlpatterns += [

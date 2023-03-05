@@ -1,0 +1,79 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+<!-- SECTION: PRESENTACIÓN PRODUCTOS -->
+<section class="presentacion">
+    <div class="texto-presentacion">
+        <div class="ubi">
+            <a href="../index.html">INICIO</a>
+            <span>- PRODUCTOS</span>
+        </div>
+        <h1>TÍTULO DE PRESENTACIÓN</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+    </div>
+</section>
+
+<!-- SECTION: NOVEDADES -->
+<section class="imprescindibles">
+    <div class="tit-imp">
+        <h2>RECIEN LLEGADOS</h2>
+        <a href="./subapartado-web/subcategoria.html">VER TODOS</a>
+    </div>
+    <div class="contenedor-imp">
+        <div class="contenido-imp">
+            <div class="img-imp"></div>
+            <div class="texto-imp">
+                <span>Nombre del producto</span>
+                <span>00.00€</span>
+            </div>
+        </div>
+        <div class="contenido-imp">
+            <div class="img-imp"></div>
+            <div class="texto-imp">
+                <span>Nombre del producto</span>
+                <span>00.00€</span>
+            </div>
+        </div>
+        <div class="contenido-imp">
+            <div class="img-imp"></div>
+            <div class="texto-imp">
+                <span>Nombre del producto</span>
+                <span>00.00€</span>
+            </div>
+        </div>
+        <div class="contenido-imp">
+            <div class="img-imp"></div>
+            <div class="texto-imp">
+                <span>Nombre del producto</span>
+                <span>00.00€</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: TODAS LAS CATEGORÍAS -->
+<section class="categorias">
+    <h2>CATEGORIAS</h2>
+    <div class="contenedor-cat">
+        <a href="./subapartado-web/categoria.html" class="cat">
+            <span>BAÑO</span>
+        </a>
+        <!-- cambiaremos el resto de divs a enlaces cuanto tengamos las categorías -->
+        <div class="cat2">
+            <div class="cat">
+                <span>COCINA</span>
+            </div>
+            <div class="cat">
+                <span>DORMITORIO</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- SECTION: REBAJAS -->
+<section class="rebajas">
+    <div>
+        <span>REBAJAS</span>
+    </div>
+</section>
+{% endblock %}
