@@ -1,0 +1,82 @@
+{% extends 'base_generic.html' %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static '/css/apartados-web/s-nosotros.css' %}">
+{% endblock %}
+
+{% block content %}
+        <!-- SECTION: PRESENTACIÓN PRODUCTOS -->
+        <section class="presentacion">
+            <div class="texto-presentacion">
+                <h1>LLEVAMOS MAS DE 100 AÑOS A TU LADO</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+            </div>
+        </section>
+
+        <!-- SECTION: CARACTERÍSTICAS-->
+        <section class="caract">
+            <div>
+                <img src="{% static 'img/icono01.png' %}" alt="icono i" >
+                <span>ALGODON 100%</span>
+            </div>
+            <div>
+                <img src="{% static 'img/icono02.png' %}" alt="icono i" >
+                <span>+1000 COLORES</span>
+            </div>
+            <div>
+                <img src="{% static 'img/icono03.png' %}" alt="icono i" >
+                <span>GRAN SURTIDO</span>
+            </div>
+            <div>
+                <img src="{% static 'img/icono04.png' %}" alt="icono i" >
+                <span>GARANTIA DE 1 AÑO</span>
+            </div>
+            <div>
+                <img src="{% static 'img/icono05.png' %}" alt="icono i" >
+                <span>HECHO EN ESPAÑA</span>
+            </div>
+        </section>
+
+         <!-- SECTION: VIDEO -->
+         <section class="historia">
+            <div class="texto-historia">
+                <p class="p1">1960s Toallas El Trovador - Publicidad Espana Anuncio </p>
+                <p>Toallas Trovador, en el más amplio y variado surtido para su cuarto de bano. El Trovador, la toalla que proporciona alegria en su baño.</p>
+                <p class="p2">TOALLAS TROVADOR - Algodon 100%</p>
+                <h3>TV 1960</h3>
+            </div>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/a6vEA5F3Ods?start=6" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </section>
+
+        <!-- SECTION: GENERACIONES -->
+        <section class="generaciones">
+            <div class="tit-gen">
+                <h2>3ª GENERACIÓN</h2>
+                <a href="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa saepe cum ipsam rem, necessitatibus fugiat dolore magnam impedit nulla libero. Aperiam harum voluptatum natus quibusdam fugit ipsa recusandae beatae nisi?</a>
+            </div>
+            <div class="fotos-gen">
+                <div>
+                    <div></div>
+                    <span>Vicente Luis Marti Cusido</span>
+                </div>
+                <div>
+                    <div></div>
+                    <span>Jose Javier Marti Cusido</span>
+                </div>
+                <div>
+                    <div></div>
+                    <span>Mateo Ignacio Marti Cusido</span>
+                </div>
+                <div>
+                    <div></div>
+                    <span>Antonio Marti Cusido</span>
+                </div>
+                <div>
+                    <div></div>
+                    <span>Alejandro Marti Cusido</span>
+                </div>
+            </div>
+        </section>
+
+{% endblock %}
