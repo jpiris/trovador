@@ -1,0 +1,61 @@
+/* AJUSTES DE LAS CATEGORÍAS */
+/* categoria.html */
+
+
+/* SECTION: PRESENTACIÓN */
+/* Ajustes generales en el css main-structure.css */
+.presentacion{
+    background-color: #E3E3E3;
+    /* CUANDO TENGAMOS IMAGEN */
+    /* background-image: url(../img/02.jpg);
+    background-size: cover; */
+}
+
+
+
+/* SECTION: SUBAPARTADO CATEGORÍAS */
+.subapartado{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.tit-sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-sub{
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-sub{
+    width: 290px;
+    height: 200px;
+    background-color: #E3E3E3;
+}
+
+.texto-sub{
+    width: 100%;
+    margin-top: 15px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-sub span{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 9pt;
+}

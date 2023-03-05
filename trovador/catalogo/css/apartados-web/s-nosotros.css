@@ -1,0 +1,130 @@
+/* AJUSTES DE LA PANTALLA SOBRE NOSOTROS */
+/* sobre-nosotros.html */
+
+
+/* SECTION: PRESENTACIÓN */
+/* Ajustes generales en el css main-structure.css */
+.presentacion{
+    background-color: #E3E3E3;
+    /* CUANDO TENGAMOS IMAGEN */
+    /* background-image: url(../img/02.jpg);
+    background-size: cover; */
+}
+
+
+
+/* SECTION: CARACTERÍSTICAS */
+.caract{
+    width: 100%;
+    padding: 5%;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.caract div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caract div img{
+    width: 70%;
+    opacity: 0.2;
+}
+
+.caract div span{
+    font-size: 9pt;
+    opacity: 0.5;
+}
+
+
+
+/* SECTION: VIDEO  */
+.historia{
+    width: 100%;
+    padding: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-tarjetas01);
+}
+
+.texto-historia h3{
+    margin-top: 10px;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 19pt;
+    text-align: right;
+}
+
+.texto-historia{
+    width: 50%;
+}
+
+.texto-historia p{
+    width: 90%;
+    font-family: 'FuentePrincipal';
+    margin-bottom: 10px;
+}
+
+.texto-historia .p1{
+    font-family: 'FuentePrincipal-Semibold';
+    font-size: 15pt;
+}
+
+.texto-historia .p2{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 10pt;
+}
+
+
+/* SECTION: GENERACIÓN */
+.generaciones{
+    width: 100%;
+    padding: 5%;
+}
+
+.tit-gen{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tit-gen a{
+    width: 50%;
+}
+
+.fotos-gen{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fotos-gen div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.fotos-gen div div{
+    width: 200px;
+    height: 200px;
+    background-color: #E3E3E3;
+}
+
+.fotos-gen div span{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 8pt;
+    text-align: center;
+    margin-top: 10%;
+}

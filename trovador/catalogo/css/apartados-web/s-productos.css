@@ -1,0 +1,146 @@
+/* AJUSTES DE LA PANTALLA PRODUCTOS */
+/* productos.html */
+
+
+/* SECTION: PRESENTACIÓN */
+/* Ajustes generales en el css main-structure.css */
+.presentacion{
+    background-color: #E3E3E3;
+    /* CUANDO TENGAMOS IMAGEN */
+    /* background-image: url(../img/02.jpg);
+    background-size: cover; */
+}
+
+
+
+/* SECTION: NOVEDADES */
+.imprescindibles{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+.tit-imp{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-imp{
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.img-imp{
+    width: 290px;
+    height: 200px;
+    background-color: #E3E3E3;
+}
+
+.texto-imp{
+    width: 100%;
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.texto-imp span{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 9pt;
+}
+
+
+
+/* SECTION: TODAS LAS CATEGORÍAS */
+.categorias{
+    width: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+.contenedor-cat{
+    width: 100%;
+    margin-top: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tit-cat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cat{
+    background-color: #E3E3E3;
+    width: 90%;
+    height: 500px;
+
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+}
+
+.cat2{
+    width: 90%;
+    height: 500px;
+    margin-left: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.cat2 .cat{
+    height: 235px; 
+    width: 100%;
+}
+
+.cat span{
+    padding: 5%;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 10pt;
+}
+
+
+
+/* SECTION: REBAJAS */
+.rebajas{
+    width: 100%;
+    margin-bottom: 100px;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+}
+
+.rebajas div{
+    width: 100%;
+    height: 400px;
+    background-color: #E3E3E3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rebajas div span{
+    font-family: 'FuentePrincipal';
+    font-size: 20pt;
+}

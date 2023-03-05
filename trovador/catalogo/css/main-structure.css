@@ -1,0 +1,195 @@
+/* ESTRUCTURA GENERAL (COMÚN A TODOS LOS APARTADOS) */
+
+
+/* ENVÍO */
+.envio{
+    width: 100%;
+    height: 20px;
+    background-color: #111111;
+    color: var(--color-tarjetas01);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.envio span{ font-size: 8pt; }
+
+
+
+/* MENÚ SUPERIOR */
+header{
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    
+    padding-left: 5%;
+    padding-right: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+nav{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+}
+
+nav ul{
+    width: 40%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 11pt; 
+}
+
+#actual{ font-family: 'FuentePrincipal'; }
+
+nav img{ 
+    margin-left: 10px;
+    opacity: 90%;
+}
+
+
+
+/* MENÚ DESPLEGABLE */
+#desplegable{
+    position: relative;
+}
+
+#desplegable:hover ul{
+    display: block;
+    opacity: 1;
+}
+
+.contenido-desplegable{
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    
+    position: absolute;
+    left: 0;
+    top: 150%;
+
+    opacity: 0;
+    display: none;
+
+    font-family: 'FuentePrincipal-Light';
+    background: #F7F7F7;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contenido-desplegable li{
+    margin: 20px;
+}
+
+
+
+/* SECTION PRESENTACIÓN */
+.presentacion{
+    width: 100%;
+    height: 910px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-presentacion{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.texto-presentacion p{
+    width: 60%;
+    margin-top: 15px;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 13pt;
+    line-height: 25px;
+}
+
+.rectangulo{
+    width: 210px;
+    height: 40px;
+    background-color: var(--color-tarjetas01);
+    margin-top: 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangulo span a{
+    font-family: 'FuentePrincipal';
+    font-size: 9pt;
+}
+
+.ubi{
+    margin-bottom: 15px;
+}
+
+.ubi a{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 10pt;
+    margin-bottom: 15px;
+}
+
+.ubi span{
+    font-family: 'FuentePrincipal';
+    font-size: 10pt;
+    margin-bottom: 15px;
+}
+
+
+
+
+
+/* FOOTER */
+footer{
+    width: 100%;
+    height: 40px;
+    background-color: var(--fondo-secundario);
+    
+    padding-left: 5%;
+    padding-right: 5%;
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer img{
+    opacity: 70%;
+}
+
+footer ul{
+    width: 40%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer ul li, footer span{
+    font-size: 8pt;
+    opacity: 80%;
+}

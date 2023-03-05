@@ -1,0 +1,89 @@
+/* AJUSTES DE LA PANTALLA CONTACTO */
+/* contacto.html */
+
+
+/* SECTION BANNER */
+.banner{
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.banner div{
+    width: 100%;
+    height: 400px;
+    background-color: #E3E3E3;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.banner div .txt-banner{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.txt-banner h3{
+    font-family: 'Playfair Display';
+    font-size: 20pt;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+
+.txt-banner p, .txt-banner a{
+    font-family: 'FuentePrincipal';
+    font-size: 9pt;
+    margin-top: 2px;
+    text-align: center;
+    line-height: 20px;
+}
+
+
+
+/* SECTION CONTACTANOS */
+.contactanos{
+    width: 100%;
+    margin-bottom: 100px;
+    padding: 5%;
+}
+
+.contenedor-formulario{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.formulario{
+    width: 100%;
+    margin-top: 20px;
+}
+
+.formulario2{
+    width: 50%;
+    margin-top: 20px;
+}
+
+.form-input, .form-label, .form-submit{
+    display: block;
+    width: 100%;
+    font-size: 10pt;
+}
+
+.form-input{
+    padding: 20px;
+    background: transparent;
+    border: 1px solid rgba(0,0,0,0.3);
+    margin-bottom: 40px;
+}
+
+.form-label{
+    padding-left: 15px;
+    position: absolute;
+    margin-top: -85px;
+    z-index: -20;
+}
