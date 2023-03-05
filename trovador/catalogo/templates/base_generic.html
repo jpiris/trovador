@@ -21,6 +21,8 @@
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" href="{% static 'css/main-structure.css' %}">
         <link rel="stylesheet" href="{% static 'css/apartados-web/s-productos.css' %}">
+        {% block extra_css %}
+        {% endblock %}
 
         <!-- Enlace tipografía GoogleFonts (secundaria) -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -46,7 +48,7 @@
                     <li class="apartado-web"><a href="{% url 'index' %}">INICIO</a></li>
                     <li class="apartado-web"><a href="./productos.html" id="actual">PRODUCTOS<img src="{% static 'img/flecha-hacia-abajo.png' %}" height="10"></a></li>
                     <li class="apartado-web"><a href="./sobre-nosotros.html">SOBRE NOSOTROS</a></li>
-                    <li class="apartado-web"><a href="./contacto.html">CONTACTO</a></li>
+                    <li class="apartado-web"><a href="{% url 'contacto' %}">CONTACTO</a></li>
                 </ul>
                 <img src="{% static 'img/lupa.png' %}" alt="Busqueda" class="icono" height="25">
                 <img src="{% static 'img/carrito.png' %}" alt="Carrito" class="icono" height="25">

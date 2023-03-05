@@ -1,0 +1,51 @@
+{% extends "base_generic.html" %}
+
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/apartados-web/s-contacto.css' %}">
+{% endblock %}
+
+{% block content %}
+        <!-- SECTION: BANNER -->
+        <section class="banner">
+            <div>
+                <div class="txt-banner">
+                    <h3>DIRECCIÓN TIENDA</h3>
+                    <a href="https://goo.gl/maps/GpnhcHpgayyqMpU19">C/ Dr. Nicasio Benlloch, 68 Bajo.<br> 46015, Valencia.</a>
+                </div>
+                <div class="txt-banner">
+                    <h3>ATENCIÓN AL CLIENTE</h3>
+                    <a href="mailto:info@trovador.es">info@trovador.es</a>
+                    <a href="tel:+34963 495 033">963 495 033</a>
+                </div>
+                <div class="txt-banner">
+                    <h3>HORARIO TIENDA</h3>
+                    <p>LUN.-VIE. 9:00-13:30 / 16:00-20:00<br>
+                    SÁB. 10:00-13:30</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONTACTANOS -->
+        <section class="contactanos">
+            <h2>COMUNICATE CON NOSOTROS</h2>
+            <div class="contenedor-formulario">
+                <form action="" class="formulario">
+                    <input type="text" class="form-input">
+                    <label for="" class="form-label">NOMBRE</label>
+                    <input type="text" class="form-input">
+                    <label for="" class="form-label">APELLIDOS</label>
+                    <input type="text" class="form-input">
+                    <label for="" class="form-label">TELÉFONO</label>
+                    <input type="text" class="form-input">
+                    <label for="" class="form-label">ASUNTO</label>
+                    <input type="text" class="form-input">
+                    <label for="" class="form-label">MENSAJE</label>
+                </form>
+                <form action="" class="formulario2">
+                    <input type="submit" class="form-submit">
+                </form>
+            </div>
+        </section>
+{% endblock %}
