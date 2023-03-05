@@ -7,3 +7,11 @@ https://docs.djangoproject.com/en/dev/ref/contrib/flatpages/
 
 Cargar css estaticos:
 https://stackoverflow.com/questions/49873194/django-use-multiple-css-file-in-one-html
+
+Relaciones modelos:
+https://docs.djangoproject.com/en/4.1/topics/db/examples/many_to_one/
+https://docs.djangoproject.com/en/4.1/topics/db/examples/many_to_many/
+
+
+Meta-titulos
+https://learndjango.com/tutorials/django-slug-tutorial
