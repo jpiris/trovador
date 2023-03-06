@@ -16,6 +16,11 @@ class Categoria(models.Model):
 
     categoria_padre = models.ForeignKey('self', null=True, blank=True, related_name='categoria', on_delete=models.SET_NULL)
 
+    # Propiedades
+    @property
+    def productos_count(self):
+        return Producto.objects.filter(categoria=self).count()
+
     # Métodos
     def get_absolute_url(self):
          """
@@ -42,7 +47,7 @@ class Producto(models.Model):
 
     meta_titulo = models.SlugField(null=False, unique=True)
 
-    categoria = models.ManyToManyField(Categoria)
+    categoria = models.ManyToManyField(Categoria, related_name='cat')
 
     class Meta:
         ordering = ["-fecha_creacion"]
