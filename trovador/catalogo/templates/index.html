@@ -1,79 +1,88 @@
 {% extends "base_generic.html" %}
 
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/apartados-web/s-index.css' %}">
+{% endblock %}
+
 {% block content %}
-<!-- SECTION: PRESENTACIÓN PRODUCTOS -->
-<section class="presentacion">
-    <div class="texto-presentacion">
-        <div class="ubi">
-            <a href="../index.html">INICIO</a>
-            <span>- PRODUCTOS</span>
-        </div>
-        <h1>TÍTULO DE PRESENTACIÓN</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
-    </div>
-</section>
+        <link rel="stylesheet" href="css/fonts.css"> <!-- tipografía principal -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/main-structure.css">
+        
 
-<!-- SECTION: NOVEDADES -->
-<section class="imprescindibles">
-    <div class="tit-imp">
-        <h2>RECIEN LLEGADOS</h2>
-        <a href="./subapartado-web/subcategoria.html">VER TODOS</a>
-    </div>
-    <div class="contenedor-imp">
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
+        <!-- SECTION: PRESENTACIÓN -->
+        <section class="presentacion">
+            <div class="texto-presentacion">
+                <h1>MODA DE HOGAR HECHA A TU MEDIDA</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+                <div class="rectangulo">
+                    <span> <a href="{% url 'productos' %}">INSPIRATE CON TROVADOR</a></span>
+                </div>
             </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- SECTION: TODAS LAS CATEGORÍAS -->
-<section class="categorias">
-    <h2>CATEGORIAS</h2>
-    <div class="contenedor-cat">
-        <a href="./subapartado-web/categoria.html" class="cat">
-            <span>BAÑO</span>
-        </a>
-        <!-- cambiaremos el resto de divs a enlaces cuanto tengamos las categorías -->
-        <div class="cat2">
-            <div class="cat">
-                <span>COCINA</span>
+        <!-- SECTION: NUESTROS IMPRESCIBLES -->
+        <section class="imprescindibles">
+            <div class="tit-imp">
+                <h2>NUESTROS IMPRESCINDIBLES</h2>
+                <a href="">VER TODOS</a>
             </div>
-            <div class="cat">
-                <span>DORMITORIO</span>
+            <div class="contenedor-imp">
+                <div class="contenido-imp">
+                    <div class="img-imp"></div>
+                    <div class="texto-imp">
+                        <span>Nombre del producto</span>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="contenido-imp">
+                    <div class="img-imp"></div>
+                    <div class="texto-imp">
+                        <span>Nombre del producto</span>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="contenido-imp">
+                    <div class="img-imp"></div>
+                    <div class="texto-imp">
+                        <span>Nombre del producto</span>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="contenido-imp">
+                    <div class="img-imp"></div>
+                    <div class="texto-imp">
+                        <span>Nombre del producto</span>
+                        <span>00.00€</span>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<!-- SECTION: REBAJAS -->
-<section class="rebajas">
-    <div>
-        <span>REBAJAS</span>
-    </div>
-</section>
+
+        <!-- SECTION: CONOCENOS -->
+        <section class="conocenos">
+            <div class="imagen"></div>
+            <div class="texto-conocenos">
+                <h3>CONOCE TROVADOR</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+                <div class="rectangulo">
+                    <span> <a href="{% url 'sobre-nosotros' %}">DESCUBRE SU HISTORIA</a></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: INSTAGRAM -->
+        <section class="instagram">
+            <h2>SIGUENOS EN INSTAGRAM</h2>
+            <div class="fotos-insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+                <img src="{% static 'img/insta.png' %}" alt="imagen insta">
+            </div>
+        </section>
 {% endblock %}
