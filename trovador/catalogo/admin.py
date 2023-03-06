@@ -6,9 +6,9 @@ class CategoriaAdmin(admin.ModelAdmin):
     prepopulated_fields = {"meta_titulo": ("nombre",)}
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ("nombre")
+    list_display = ("nombre",)
     prepopulated_fields = {"meta_titulo": ("nombre",)}
 
 # Register your models here.
-admin.site.register(Producto)
+admin.site.register(Producto, ProductoAdmin)
 admin.site.register(Categoria, CategoriaAdmin)

@@ -1,5 +1,7 @@
 from django.shortcuts import render
 
+from catalogo.models import Producto
+
 # Create your views here.
 def index(request):
     """
@@ -8,7 +10,10 @@ def index(request):
     return render(request, 'index.html')
 
 def productos(request):
-    return render(request, 'productos.html')
+    context = {
+        'productos_list': Producto.objects.order_by('-id')[:4]
+    }
+    return render(request, 'productos.html', context)
 
 def contacto(request):
     return render(request, 'contacto.html')

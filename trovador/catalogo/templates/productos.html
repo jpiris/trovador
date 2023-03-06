@@ -20,7 +20,20 @@
         <a href="./subapartado-web/subcategoria.html">VER TODOS</a>
     </div>
     <div class="contenedor-imp">
+
+        {% for producto in productos_list%}
         <div class="contenido-imp">
+            <div class="img-imp">
+                {% comment %} <img src={{ producto.imagen1.url }}> falta css para ajustar la imagen {% endcomment %} 
+            </div>
+            <div class="texto-imp">
+                <span>{{ producto.nombre }}</span>
+                <span>{{ producto.precio }}€</span>
+            </div>
+        </div>
+        {% endfor %}
+
+        {% comment %} <div class="contenido-imp">
             <div class="img-imp"></div>
             <div class="texto-imp">
                 <span>Nombre del producto</span>
@@ -40,14 +53,8 @@
                 <span>Nombre del producto</span>
                 <span>00.00€</span>
             </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
+        </div> {% endcomment %}
+
     </div>
 </section>
 
