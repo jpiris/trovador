@@ -30,3 +30,14 @@ class Producto(models.Model):
         Cadena para representar el objeto MyModelName (en el sitio de Admin, etc.)
         """
         return self.nombre
+
+class Categoria(models.Model):
+    nombre = models.CharField(max_length=50, help_text="Nombre de la categoria")
+    descripcion_corta = models.TextField(max_length=200, help_text="Descripcion corta (max 200 caracteres)")
+    #Descripcion larga deberia ser HTML: https://pypi.org/project/django-tinymce/
+    descripcion_larga = models.TextField(max_length=1000, help_text="Descripcion larga")
+    meta_titulo = models.SlugField(null=False, unique=True)
+
+    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación del producto")
+
+    categoria_padre = models.ForeignKey('self', null=True, related_name='categoria', on_delete=models.SET_NULL)
