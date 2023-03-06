@@ -12,6 +12,7 @@ class Categoria(models.Model):
     meta_titulo = models.SlugField(null=False, unique=True)
     destacado = models.BooleanField(help_text="Destacado, aparece en la pagina principal")
 
+    imagen1 = models.ImageField(upload_to='uploads/', blank=True)
     fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación del producto")
 
     categoria_padre = models.ForeignKey('self', null=True, blank=True, related_name='categoria', on_delete=models.SET_NULL)
