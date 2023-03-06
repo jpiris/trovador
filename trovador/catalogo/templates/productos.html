@@ -23,15 +23,17 @@
     <div class="contenedor-imp">
 
         {% for producto in productos_list %}
-        <div class="contenido-imp">
-            <div class="img-imp">
-                <img class="img-imp" src={{ producto.imagen1.url }}> {% comment %} falta css para ajustar la imagen  {% endcomment %}
+        <a href="{{ producto.get_absolute_url }}">
+            <div class="contenido-imp">
+                <div class="img-imp">
+                    <img class="img-imp" src={{ producto.imagen1.url }}> {% comment %} falta css para ajustar la imagen  {% endcomment %}
+                </div>
+                <div class="texto-imp">
+                    <span>{{ producto.nombre }}</span>
+                    <span>{{ producto.precio }}€</span>
+                </div>
             </div>
-            <div class="texto-imp">
-                <span>{{ producto.nombre }}</span>
-                <span>{{ producto.precio }}€</span>
-            </div>
-        </div>
+        </a>
         {% endfor %}
 
         {% comment %} <div class="contenido-imp">
@@ -66,24 +68,36 @@
 <section class="categorias">
     <h2>CATEGORIAS</h2>
     <div class="contenedor-cat">
-        <a href="./subapartado-web/categoria.html" class="cat">
-            {% with categorias_destacadas|index:0 as cat1 %}
+
+        {% with categorias_destacadas|index:0 as cat1 %}
+        <a href="{{ cat1.get_absolute_url }}" class="cat">
+            {% comment %} <img src={{ cat1.imagen1.url }}> {% endcomment %}
             <span>{{ cat1.nombre|upper }}</span>
-            {% endwith %}
         </a>
+        {% endwith %}
+
         <!-- cambiaremos el resto de divs a enlaces cuanto tengamos las categorías -->
         {% if categorias_destacadas|length >= 3  %}
         <div class="cat2">
+
+            {% with categorias_destacadas|index:1 as cat2 %}
             <div class="cat">
-                {% with categorias_destacadas|index:1 as cat2 %}
-                <span>{{ cat2.nombre|upper }}</span>
-                {% endwith %}
+                <a href="{{ cat2.get_absolute_url }}" class="cat">
+                    {% comment %} <img src={{ cat2.imagen1.url }}> {% endcomment %}
+                    <span>{{ cat2.nombre|upper }}</span>
+                </a>
             </div>
+            {% endwith %}
+
+            {% with categorias_destacadas|index:2 as cat3 %}
             <div class="cat">
-                {% with categorias_destacadas|index:2 as cat3 %}
-                <span>{{ cat3.nombre|upper }}</span>
-                {% endwith %}
+                <a href="{{ cat3.get_absolute_url }}" class="cat">
+                    {% comment %} <img src={{ cat3.imagen1.url }}> {% endcomment %}
+                    <span>{{ cat3.nombre|upper }}</span>
+                </a>
             </div>
+            {% endwith %}
+
         </div>
         {% endif %}
     </div>
