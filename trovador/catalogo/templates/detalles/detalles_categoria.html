@@ -1,0 +1,101 @@
+{% extends "base_generic.html" %}
+
+{% block extra_css %}
+    <style>
+        .container_items {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+		.item {
+			width: calc(25% - 10px);
+			height: 100px;
+			margin-bottom: 20px;
+			background-color: #F5F5F5;
+			border: 1px solid #DDDDDD;
+			box-sizing: border-box;
+		}
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .col {
+            flex-basis: calc(50% - 10px);
+            margin-bottom: 20px;
+        }
+
+        .col p {
+            margin-bottom: 10px;
+        }
+
+        .col img {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+
+        .header {
+			width: 100%;
+			margin-bottom: 20px;
+			text-align: center;
+			font-size: 24px;
+			font-weight: bold;
+		}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="header"><h1>Producto: {{ categoria.nombre }}</h1></div>
+
+        <div class="col">
+            <img src={{ categoria.imagen1.url }} alt="Imagen de ejemplo">
+        </div>
+
+        <div class="col">
+            <p><strong>Nombre:</strong> <a href="">{{ categoria.nombre }}</a></p> <!-- author detail link not yet defined -->
+            <p><strong>Descripcion corta:</strong> {{ categoria.descripcion_corta }}</p>
+            <p><strong>Descripcion larga:</strong> {{ categoria.descripcion_larga }}</p>
+
+            {% if categoria.categoria_padre %}
+            <p><strong>Categoria padre:</strong> {{ categoria.categoria_padre.nombre }}</p>
+            {% endif %}
+
+            {% if categorias_hijas %}
+            <p><strong>Categorias hijas:</strong> 
+                {% for categoria in categorias_hijas %}
+                    <a href={{ categoria.get_absolute_url }}> <span> {{ categoria.nombre }} </span> </a>
+                {% endfor %}
+            </p>
+            {% endif %}
+        </div>
+    </div>
+
+    <div class="container_items">
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+		<div class="item"></div>
+	</div>
+  
+{% endblock %}
