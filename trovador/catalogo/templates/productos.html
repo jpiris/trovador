@@ -13,6 +13,7 @@
     </div>
 </section>
 
+{% if productos_list %}
 <!-- SECTION: NOVEDADES -->
 <section class="imprescindibles">
     <div class="tit-imp">
@@ -21,10 +22,10 @@
     </div>
     <div class="contenedor-imp">
 
-        {% for producto in productos_list%}
+        {% for producto in productos_list %}
         <div class="contenido-imp">
             <div class="img-imp">
-                {% comment %} <img src={{ producto.imagen1.url }}> falta css para ajustar la imagen {% endcomment %} 
+                <img class="img-imp" src={{ producto.imagen1.url }}> {% comment %} falta css para ajustar la imagen  {% endcomment %}
             </div>
             <div class="texto-imp">
                 <span>{{ producto.nombre }}</span>
@@ -57,25 +58,37 @@
 
     </div>
 </section>
+{% endif %}
 
+{% if categorias_destacadas and categorias_destacadas|length > 0 %}
+{% load index %}
 <!-- SECTION: TODAS LAS CATEGORÍAS -->
 <section class="categorias">
     <h2>CATEGORIAS</h2>
     <div class="contenedor-cat">
         <a href="./subapartado-web/categoria.html" class="cat">
-            <span>BAÑO</span>
+            {% with categorias_destacadas|index:0 as cat1 %}
+            <span>{{ cat1.nombre|upper }}</span>
+            {% endwith %}
         </a>
         <!-- cambiaremos el resto de divs a enlaces cuanto tengamos las categorías -->
+        {% if categorias_destacadas|length >= 3  %}
         <div class="cat2">
             <div class="cat">
-                <span>COCINA</span>
+                {% with categorias_destacadas|index:1 as cat2 %}
+                <span>{{ cat2.nombre|upper }}</span>
+                {% endwith %}
             </div>
             <div class="cat">
-                <span>DORMITORIO</span>
+                {% with categorias_destacadas|index:2 as cat3 %}
+                <span>{{ cat3.nombre|upper }}</span>
+                {% endwith %}
             </div>
         </div>
+        {% endif %}
     </div>
 </section>
+{% endif %}
 
 <!-- SECTION: REBAJAS -->
 <section class="rebajas">
