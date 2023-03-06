@@ -66,36 +66,33 @@
             <p><strong>Descripcion larga:</strong> {{ categoria.descripcion_larga }}</p>
 
             {% if categoria.categoria_padre %}
-            <p><strong>Categoria padre:</strong> {{ categoria.categoria_padre.nombre }}</p>
+            <p><strong>Categoria padre:</strong> 
+                <a href={{ categoria.categoria_padre.get_absolute_url }}>
+                    <span>{{ categoria.categoria_padre.nombre }}</span></p>
+                </a>
             {% endif %}
 
             {% if categorias_hijas %}
-            <p><strong>Categorias hijas:</strong> 
+            <p>
+                <strong>Categorias hijas:</strong> 
                 {% for categoria in categorias_hijas %}
-                    <a href={{ categoria.get_absolute_url }}> <span> {{ categoria.nombre }} </span> </a>
+                    <a href={{ categoria.get_absolute_url }}> <span>{{ categoria.nombre }}</span> </a>
                 {% endfor %}
             </p>
             {% endif %}
         </div>
     </div>
 
+    {% if productos %}
     <div class="container_items">
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
-		<div class="item"></div>
+        {% for producto in productos %}
+		<div class="item">
+            <a href={{ producto.get_absolute_url }}>
+                <span> {{ producto.nombre }} </span>
+            </a>
+        </div>
+        {% endfor %}
 	</div>
+    {% endif %}
   
 {% endblock %}

@@ -51,7 +51,12 @@
             <p><strong>Descripcion corta:</strong> {{ producto.descripcion_corta }}</p>
             <p><strong>Descripcion larga:</strong> {{ producto.descripcion_larga }}</p>
             <p><strong>Precio:</strong> {{ producto.precio }}</p>
-            <p><strong>Categorias:</strong> {{ producto.categoria.all|join:", " }}</p>
+            <p><strong>Categorias:</strong> 
+                {% for categoria in producto.categoria.all %}
+                    <a href={{ categoria.get_absolute_url }}> <span>{{ categoria.nombre }}</span> </a>
+                {% endfor %}
+                {% comment %} {{ producto.categoria.all|join:", " }} {% endcomment %}
+            </p>
         </div>
     </div>
   

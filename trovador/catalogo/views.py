@@ -27,7 +27,12 @@ def producto_detail(request, slug):
 def categoria_detail(request, slug):
     categoria = get_object_or_404(Categoria, meta_titulo=slug)
     categorias_hijas = Categoria.objects.filter(categoria_padre=categoria)
-    return render(request, 'detalles/detalles_categoria.html', context={'categoria': categoria, 'categorias_hijas':categorias_hijas})
+    productos = Producto.objects.filter(categoria=categoria)
+    return render(request, 'detalles/detalles_categoria.html', context={
+        'categoria': categoria, 
+        'categorias_hijas':categorias_hijas,
+        'productos':productos
+        })
 
 def contacto(request):
     return render(request, 'contacto.html')
