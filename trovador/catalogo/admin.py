@@ -2,7 +2,7 @@ from django.contrib import admin
 from catalogo.models import Producto, Categoria
 
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "descripcion_corta", "destacado")
+    list_display = ("nombre", "descripcion_corta", "productos_count", "destacado")
     prepopulated_fields = {"meta_titulo": ("nombre",)}
 
 class ProductoAdmin(admin.ModelAdmin):
