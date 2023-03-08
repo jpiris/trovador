@@ -2,8 +2,12 @@ from tkinter import image_names
 from tokenize import blank_re
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import AbstractUser
 
 # Create your models here.
+class User(AbstractUser):
+    pass
+
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50, help_text="Nombre de la categoria")
     descripcion_corta = models.TextField(max_length=200, blank=True, help_text="Descripcion corta (max 200 caracteres)")
