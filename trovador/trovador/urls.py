@@ -24,9 +24,14 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('catalogo.urls')),
     #path('', RedirectView.as_view(url='', permanent=True)),
-    ]
+
+    
+]
 
 urlpatterns += [
-    path("about-us/", views.flatpage, {"url": "/about-us/"}, name="about"),
-    path("license/", views.flatpage, {"url": "/license/"}, name="license"),
+    # Django site authentication urls (for login, logout, password management)
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
