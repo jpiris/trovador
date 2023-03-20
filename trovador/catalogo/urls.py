@@ -11,8 +11,6 @@ urlpatterns = [
     path('categoria/<slug:slug>/', views.categoria_detail, name='categoria'),
     path('contacto/', views.contacto, name='contacto'),
     path('sobre-nosotros/', views.sobrenosotros, name='sobre-nosotros'),
-
-
-    
 ] 
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
