@@ -140,3 +140,6 @@ LOGIN_REDIRECT_URL = '/'
 
 # Para que las urls no necesiten '/' al final
 APPEND_SLASH=True
+
+# Para que la web pueda enviar emails
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
