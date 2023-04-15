@@ -19,6 +19,8 @@ from django.urls import path, include
 from django.views.generic import RedirectView, TemplateView
 from django.contrib.flatpages import views
 from django.conf.urls.static import static
+from django_registration.backends.activation.views import RegistrationView
+from trovador.forms import CustomUserForm
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,8 +32,13 @@ urlpatterns = [
 
 urlpatterns += [
     # Django site authentication urls (for login, logout, password management)
-    path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/register/', 
+    RegistrationView.as_view(
+        form_class=CustomUserForm
+    ),
+    name='django_registration_register'),
     path('accounts/', include('django_registration.backends.activation.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
