@@ -81,7 +81,7 @@
         <div class="cat2">
 
             {% with categorias_destacadas|index:1 as cat2 %}
-            <div class="cat">
+            <div class="cat" style="background-image:url('{{ cat2.imagen1.url }}'); background-size:cover">
                 <a href="{{ cat2.get_absolute_url }}" class="cat">
                     {% comment %} <img src={{ cat2.imagen1.url }}> {% endcomment %}
                     <span>{{ cat2.nombre|upper }}</span>
