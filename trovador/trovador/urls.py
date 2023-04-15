@@ -31,7 +31,9 @@ urlpatterns = [
 urlpatterns += [
     # Django site authentication urls (for login, logout, password management)
     path('accounts/', include('django.contrib.auth.urls')),
+    path('accounts/', include('django_registration.backends.activation.urls')),
 ]
 
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 
