@@ -3,70 +3,17 @@
 
 
 /* SECTION: PRESENTACIÓN */
-/* Ajustes generales en el css main-structure.css */
 .presentacion{
-    background-color: #E3E3E3;
-    /* CUANDO TENGAMOS IMAGEN */
-    /* background-image: url(../img/02.jpg);
-    background-size: cover; */
+    background-image: url(../../img/cabecera-productos.jpg);
+    background-size: cover;
 }
-
-
-
-/* SECTION: NOVEDADES */
-.imprescindibles{
-    width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
-}
-
-.tit-imp{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.contenedor-imp{
-    width: 100%;
-    margin-top: 20px;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.img-imp{
-    width: 290px;
-    height: 200px;
-    background-color: #E3E3E3;
-}
-
-.texto-imp{
-    width: 100%;
-    margin-top: 5%;
-
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.texto-imp span{
-    font-family: 'FuentePrincipal-Light';
-    font-size: 9pt;
-}
-
 
 
 /* SECTION: TODAS LAS CATEGORÍAS */
 .categorias{
     width: 100%;
-    padding-left: 5%;
-    padding-right: 5%;
-    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 
 .contenedor-cat{
@@ -94,6 +41,13 @@
     display: flex;
     justify-content: left;
     align-items: flex-end;
+
+    background-size: 100% 100%;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url(../../img/seccion-baño.jpg);
 }
 
 .cat2{
@@ -112,27 +66,46 @@
     width: 100%;
 }
 
-.cat span{
-    padding: 5%;
-    font-family: 'FuentePrincipal-Light';
-    font-size: 10pt;
+/* configurar imagenes */
+.cat2 .cat:nth-child(1){
+    background-image: url(../../img/seccion-cocina.jpg);
+}
+.cat2 .cat:nth-child(2){
+    background-image: url(../../img/seccion-dormitorio.jpg);
 }
 
+.cat span{
+    width: 100%;
+
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+
+    font-family: 'FuentePrincipal';
+    font-size: 15pt;
+    background-color: #e3e3e36b;
+}
 
 
 /* SECTION: REBAJAS */
 .rebajas{
     width: 100%;
     margin-bottom: 100px;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
     padding-top: 5%;
 }
 
-.rebajas div{
+.rebajas a{
     width: 100%;
     height: 400px;
-    background-color: #E3E3E3;
+
+    background-image: url(../../img/seccion-rebajas.jpg);
+    background-size: 100% 100%;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
 
     display: flex;
     flex-direction: row;
@@ -140,7 +113,37 @@
     align-items: center;
 }
 
-.rebajas div span{
-    font-family: 'FuentePrincipal';
-    font-size: 20pt;
+.rebajas a span{
+    font-family: 'FuentePrincipal-Medium';
+    font-size: 25pt;
+    color: rgb(230, 23, 23);
+
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+
+    background-color: #e3e3e391;
+}
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+
+
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
 }

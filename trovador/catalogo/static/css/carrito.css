@@ -1,0 +1,94 @@
+/* AJUSTES DEL CARRITO */
+/* dialog + carrito.html */
+
+
+/* Ajustes del dialog*/
+#carritoDialog{
+    width: 25%;
+    height: 100%;
+    background-color: white;
+    border: none;
+    
+    display: flex;
+    margin-left: auto;
+   
+}
+
+#cerrar3{
+    padding: 10px;
+    position: absolute;
+    right: 0;
+}
+
+#carrito-completo, #comprar{
+    width: 240px;
+    padding: 10px;
+    margin-top: 20px;
+    border: 0.5px solid #707070;
+    color: #707070;
+    font-size: 9pt;
+}
+
+#comprar{
+    background-color: #707070;
+    color: white;
+}
+
+.apartadosCarrito{
+    width: 100%;
+    padding: 10%;
+    margin-top: 5%;
+}
+
+.apartadosCarrito h2{
+    font-size: 13pt;
+}
+
+.producto-carrito{
+    width: 100%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.prod-seleccionado{
+    width: 150px;
+    margin-right: 5%;
+}
+
+.prod-texto,
+.prod-texto button{
+    display: flex;
+    flex-flow: column;
+    justify-content: left;
+    margin-left: 5%;
+    margin-top: 2%;
+}
+
+.prod-texto p{
+    font-size: 10pt;   
+}
+
+.prod-texto span{
+    font-size: 10pt;
+    margin-bottom: 2%;
+    font-family: 'FuentePrincipal-Light';
+}
+
+
+.botones{
+    margin-top: 3%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+hr{
+    width: 90%;
+    margin: auto;
+}
