@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="C:\Users\arturo\tfg\trobador-marzo\trovador-env"
+VIRTUAL_ENV="C:\Users\arturo\tfg\repos\repo-trovador\trovador-env"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
