@@ -1,0 +1,28 @@
+{% load static %}
+
+{% block loginDialog %}
+    <!-- POP UP LOGIN & REGISTRO. Funcionamiento al hacer click en el perfil de usuario-->
+    {# ARTURO: Falta por implementar. Mirar templates/registration/login.html #}
+    <dialog id="loginDialog">
+        <button id="cerrar"><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="20"></button>
+        <div class="apartadosLogin">
+            <div>
+                <p>CLIENTES REGISTRADOS</p>
+                <p>Inicia sesión con tu correo y contraseña</p>
+                <form action="" method="post">
+                    <input type="text" name="email" id="email" value="Email*">
+                    <input type="text" name="password" id="password" value="Contraseña*">
+                    <br>
+                    <span>¿Has olvidado tu contraseña?</span>
+                    <br>
+                    <button type="submit" id="submit">INICIA SESIÓN</button>
+                </form>
+            </div>
+            <div>
+                <p>NUEVOS CLIENTES </p>
+                <p>Crea una cuenta para guardar tus productos favoritos y agilizar el proceso de compra.</p>
+                <button id="registro">CREAR CUENTA</button>
+            </div>
+        </div>
+    </dialog>
+{% endblock loginDialog %}

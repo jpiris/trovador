@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html lang="es">
+{% load static %}
 
     <!--
         Web realizada acorde a los siguientes tamaños de pantalla:
         móvil: 375 x 914    tablet: 768     escritorio: 1024 x 1600
     -->
 
-{% include 'tracking.html' %}
-
+    
     <head>
+        {% include 'includes/scripts.html' %}
+        {% include 'includes/tracking.html' %}
+
         <!-- Ajustes iniciales -->
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>{% block title %}Nuestros Productos{% endblock %}</title>
-
+        
         <!-- Enlaces a hojas de estilo -->
-        {% load static %}
+        
         <link rel="stylesheet" href="{% static 'css/fonts.css' %}"> <!-- tipografía principal -->
         <link rel="stylesheet" href="{% static 'css/styles.css' %}">
         <link rel="stylesheet" href="{% static 'css/main-structure.css' %}">
-        <link rel="stylesheet" href="{% static 'css/apartados-web/s-productos.css' %}">
+        <link rel="stylesheet" href="{% static 'css/apartados-web/s-index.css' %}">
+        <link rel="stylesheet" href="{% static 'css/popup-login.css' %}">
+        <link rel="stylesheet" href="{% static 'css/carrusel.css' %}">
+        <link rel="stylesheet" href="{% static 'css/carrito.css' %}">
+
         {% block extra_css %}
         {% endblock %}
 
@@ -29,6 +36,8 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
 
+        <!-- Fav Icon-->
+        <link rel="shortcut icon" href="{% static '/img/favicon.png' %}">
     </head>
 
     <body>
@@ -39,22 +48,39 @@
         </section>
         {% endblock %}
 
-        <!-- Menú de navegación -->
         {% block navbar %}
         <header>
             <img src="{% static 'img/logo.png' %}" alt="Logo Trovador" class="logo" height="50">
             <nav>
                 <ul class="menu-superior">
-                    <li class="apartado-web"><a href="{% url 'index' %}">INICIO</a></li>
-                    <li class="apartado-web"><a href="{% url 'productos' %}" id="actual">PRODUCTOS<img src="{% static 'img/flecha-hacia-abajo.png' %}" height="10"></a></li>
+                    <li class="apartado-web"><a href="{% url 'index' %}" id="actual">INICIO</a></li>
+                    <li class="apartado-web" id="desplegable">
+                        <a href="{% url 'productos' %}">PRODUCTOS<img src="{% static './img/ic-abajo.png' %}" height="10"></a>
+                        <ul class="contenido-desplegable">
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">NOVEDADES</a></li>
+                            <li><a href="./apartados-web/subapartado-web/categoria.html">BAÑO</a></li>
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">COCINA</a></li>
+                            <li><a href="./apartados-web/subapartado-web/categoria.html">DORMITORIO</a></li>
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html" id="rebajas">REBAJAS</a></li>
+                        </ul>
+                    </li>
                     <li class="apartado-web"><a href="{% url 'sobre-nosotros' %}">SOBRE NOSOTROS</a></li>
                     <li class="apartado-web"><a href="{% url 'contacto' %}">CONTACTO</a></li>
                 </ul>
-                <img src="{% static 'img/lupa.png' %}" alt="Busqueda" class="icono" height="25">
-                <img src="{% static 'img/carrito.png' %}" alt="Carrito" class="icono" height="25">
+
+                {% if user.is_authenticated %}
+                <button id="cerrarSesion"><img src="img/ic-trovador.png" alt="Inicio sesión" class="icono" height="23"></button>
+                {% else %}
+                <button id="inicioSesion"><img src="{% static 'img/ic-usuario.png' %}" alt="Inicio sesión" class="icono" height="20"></button>
+                {% endif %}
+
+                <button id="busqueda"><img src="{% static 'img/ic-lupa.png' %}" alt="Busqueda" class="icono" height="20"></button>
+                <button id="carritoCompra"><img src="{% static 'img/ic-carrito.png' %}" alt="Carrito" class="icono" height="20"></button>
             </nav>
         </header>
-        {% endblock %}
+        {% endblock navbar %}
+
+        {% include 'includes/login_dialog.html' %}
 
         {% block content %}
         {% endblock %}
@@ -72,5 +98,6 @@
             <span>&#169 TFG TROVADOR 2023</span>
         </footer>
         {% endblock %}
+
     </body>
 </html>
