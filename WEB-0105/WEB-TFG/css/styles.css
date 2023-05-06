@@ -1,0 +1,65 @@
+/* AJUSTES GENERALES */
+/* común a todos los apartados */
+
+*{
+    /* RESET */
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+
+    /* VARIABLES DE COLOR*/
+    --fondo-web: #F7F7F7;
+    --color-texto: ##1B1B1B;  
+    --color-secundario-texto: #707070;
+    --color-tarjetas01:#FFFFFF;
+    --color-tarjetas02: #707070;
+    --fondo-secundario: #E5E5E5;
+
+    /* TIPOGRAFÍA */
+    font-family: 'FuentePrincipal'; 
+    color: var(--color-texto);
+}
+
+/* FONDO */
+body{
+    background-color: var(--fondo-web);
+}
+
+/* LISTAS Y ENLACES */
+ul{ 
+    list-style: none;
+}
+
+a{ 
+    text-decoration: none;
+    font-size: 9pt;
+}
+
+/* VARIABLES DE TEXTO */
+h1{
+    font-family: 'Playfair Display';
+    font-size: 35pt;
+    font-weight: 400;
+}
+
+h2{
+    font-family: 'FuentePrincipal';
+    font-size: 15pt;
+}
+
+h3{
+    font-family: 'FuentePrincipal';
+    font-size: 19pt;
+}
+
+p{  
+    font-family: 'FuentePrincipal-Light';
+    font-size: 13pt;
+    line-height: 25px;
+}
+
+
+
+
+
+

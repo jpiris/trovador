@@ -1,0 +1,227 @@
+/* AJUSTES DE LA PANTALLA SOBRE NOSOTROS */
+/* sobre-nosotros.html */
+
+
+/* SECTION: PRESENTACIÓN */
+/* Ajustes generales en el css main-structure.css */
+.presentacion{
+    background-image: url(../../img/cabecera-sobrenosotros.jpg);
+    background-size: cover;
+    background-position: 4;
+}
+
+/* SECTION: GENERACIÓN */
+.generaciones{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-tarjetas01);
+}
+
+.generaciones div{
+    flex: 1;
+}
+
+.fotos-gen{
+    display: flex;
+    justify-content: center;
+}
+
+.generaciones img{
+    width: 560px;
+    height: 315px;
+    object-fit: cover;
+}
+
+.tit-gen{
+    margin-left: 4%;
+}
+
+.tit-gen p{
+    margin-top: 1%;
+}
+
+
+/* SECTION: CARACTERÍSTICAS */
+.caract{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 3%;
+    padding-bottom: 5%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center; 
+}
+
+.caract div{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.caract div img{
+    width: 70%;
+    opacity: 0.35;
+}
+
+.caract div span{
+    font-size: 9pt;
+    opacity: 0.5;
+    text-align: center;
+}
+
+
+
+/* SECTION: VIDEO  */
+.historia{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--color-tarjetas01);
+}
+
+.historia div{
+    flex: 1;
+}
+
+.texto-historia{
+    width: 50%;
+}
+
+.texto-historia h3{
+    width: 90%;
+    margin-top: 10px;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 19pt;
+    text-align: right;
+}
+
+.texto-historia p{
+    width: 90%;
+    font-family: 'FuentePrincipal';
+    margin-bottom: 10px;
+}
+
+.texto-historia .p1{
+    font-family: 'FuentePrincipal-Semibold';
+    font-size: 15pt;
+}
+
+.texto-historia .p2{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 10pt;
+}
+
+.historia div iframe{
+    width: 100%;
+    height: 350px;
+    margin-left: 3%;
+}
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    /* PRESENTACION */
+    .texto-presentacion {
+        width: 70%;
+    }
+
+    /* GENERACIONES */
+    .generaciones{
+        padding: 5%;
+    }
+
+    .generaciones img{
+        width: 280px;
+        height: 157.5px;
+        object-fit: cover;
+    }
+
+    .tit-gen p{
+        font-size: 12pt;
+    }
+
+    .historia div iframe{
+        width: 100%;
+        height: 300px;
+    }
+}
+
+
+/*  Móviles en horizontal o tablets en vertical y móviles vertical */
+@media (max-width: 767px) { 
+    /* GENERACIONES */
+    .generaciones{
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    .generaciones img{
+        width: 280px;
+        height: 157.5px;
+        object-fit: cover;
+    }
+
+    .tit-gen{
+        margin-top: 3%;
+        margin-left: 0;
+        padding: 3%;
+        text-align: center;
+    }
+
+    .tit-gen p{
+        font-size: 12pt;
+    }
+
+
+    /*  VIDEO */
+    .historia{
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    .texto-historia, .historia div{
+        width: 100%;
+        text-align: center;
+        margin: auto;
+        margin-top: 1%;
+    }
+
+    .texto-historia h3,
+    .texto-historia p{
+        width: 100%;
+        margin: auto;
+        margin-top: 1%;
+    }
+
+    .historia div iframe{
+        width: 100%;
+        height: 300px;
+        margin: auto;
+    }
+    
+}
+

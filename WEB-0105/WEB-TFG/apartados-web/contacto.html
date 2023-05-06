@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- 
+        Web realizada acorde a los siguientes tamaños de pantalla:
+        móvil: 375 x 914    tablet: 768     escritorio: 1024 x 1600
+    -->
+
+    <head>
+
+        <!-- Ajustes iniciales -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Contacto</title>
+
+        <!-- Enlaces a hojas de estilo -->
+        <link rel="stylesheet" href="../css/fonts.css"> <!-- tipografía principal -->
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/main-structure.css">
+        <link rel="stylesheet" href="../css/apartados-web/s-contacto.css">
+
+        <!-- Enlace tipografía GoogleFonts (secundaria) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <!-- Fav Icon-->
+        <link rel="shortcut icon" href="../img/favicon.png">
+
+    </head>
+
+    <body>
+        
+        <!-- Envios -->
+        <section class="envio">
+            <span>ENVÍOS GRATUITOS A TODA ESPAÑA EN PEDIDOS +50€. DEVOLUCIONES GRATUITAS DURANTE 2 SEMANAS</span>
+        </section>
+
+        <!-- Menú de navegación -->
+        <header>
+            <div><img src="../img/logo.png" alt="Logo Trovador" class="logo"></div>
+            <nav>
+                <ul class="menu-superior">
+                    <li class="apartado-web"><a href="../index.html">INICIO</a></li>
+                    <li class="apartado-web" id="desplegable">
+                        <a href="./productos.html">PRODUCTOS <img src="../img/ic-abajo.png" height="10"></a>
+                        <ul class="contenido-desplegable">
+                            <li><a href="">NOVEDADES</a></li>
+                            <li><a href="">BAÑO</a></li>
+                            <li><a href="">COCINA</a></li>
+                            <li><a href="">DORMITORIO</a></li>
+                            <li><a href="" id="rebajas">REBAJAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="apartado-web"><a href="./sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                    <li class="apartado-web"><a href="./contacto.html" id="actual">CONTACTO</a></li>
+                </ul>
+            </nav>
+            <div class="ic">
+                <img src="../img/ic-usuario.png" alt="Busqueda" class="icono" height="20">
+                <img src="../img/ic-lupa.png" alt="Busqueda" class="icono" height="20">
+                <img src="../img/ic-carrito.png" alt="Carrito" class="icono" height="20">
+            </div>
+        </header>
+
+        <!-- POP UPS -->
+        
+
+
+
+
+
+
+
+        <!-- SECTION: PRESENTACIÓN PRODUCTOS -->
+        <section class="presentacion">
+            <div class="texto-presentacion">
+                <h1>CONTACTA CON NOSOTROS</h1>
+                <p>¡No dudes en ponerte en contacto con nosotros! Estamos aquí para ayudarte en lo que necesites. </p>
+            </div>
+        </section>
+
+        <!-- SECTION: INFO -->
+        <section class="info">
+            <div class="contenedor-info">
+                <div class="txt-info">
+                    <h3>DIRECCIÓN TIENDA</h3>
+                    <a href="https://goo.gl/maps/GpnhcHpgayyqMpU19">C/ Dr. Nicasio Benlloch, 68 Bajo.<br> 46015, Valencia.</a>
+                </div>
+                <div class="txt-info">
+                    <h3>ATENCIÓN AL CLIENTE</h3>
+                    <a href="mailto:info@trovador.es">info@trovador.es</a><br>
+                    <a href="tel:+34963 495 033">963 495 033</a>
+                </div>
+                <div class="txt-info">
+                    <h3>HORARIO TIENDA</h3>
+                    <p>L-V 9:00-13:30 / 16:00-20:00<br>
+                    S 10:00-13:30</p>
+                </div>
+            </div>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d38312.60966307972!2d-0.43311842036299314!3d39.483951344932514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd60458c81d9704d%3A0xd2148b9d8363ba3!2sComercial%20Trovador%20S.L.!5e0!3m2!1ses!2ses!4v1682848396740!5m2!1ses!2ses"  style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </section>
+
+        <!-- SECTION FORMULARIO -->
+        <section class="formulario-contacto">
+            <div class="formulario">      
+                <h1> ENVÍANOS UN MENSAJE</h1>
+                <form action="submeter-formulario.php" method="post" class="form-action">       
+                    <div class="form1">
+                        <p>
+                            <label for="nombre" class="colocar_nombre">Nombre <span class="obligatorio">*</span></label>
+                            <input type="text" name="introducir_nombre" id="nombre" required="obligatorio" placeholder="Escribe tu nombre">
+                        </p>
+                        <p>
+                            <label for="email" class="colocar_email">Email<span class="obligatorio">*</span></label>
+                            <input type="email" name="introducir_email" id="email" required="obligatorio" placeholder="Escribe tu Email">
+                        </p> 
+                        <p>
+                            <label for="asunto" class="colocar_asunto">Asunto<span class="obligatorio">*</span></label>
+                            <input type="text" name="introducir_asunto" id="assunto" required="obligatorio" placeholder="Escribe un asunto">
+                        </p> 
+                        <p>
+                            <label for="telefone" class="colocar_telefono">Teléfono</label>
+                            <input type="tel" name="introducir_telefono" id="telefono" placeholder="Escribe tu teléfono">
+                        </p>
+                    </div> 
+                    <div class="form2">
+                        <p>
+                            <label for="mensaje" class="colocar_mensaje">Mensaje<span class="obligatorio">*</span></label>                     
+                            <textarea name="introducir_mensaje" class="texto_mensaje" id="mensaje" required="obligatorio" placeholder="Deja aquí tu comentario..."></textarea> 
+                        </p>
+                        <p>
+                            <button type="submit" name="enviar_formulario" id="enviar"><p>Enviar</p></button>
+                        </p> 
+                    </div>                      
+                </form>
+            </div>  
+        </section>
+        
+
+        <!-- Footer -->
+        <footer>
+            <div><img src="../img/logo.png" alt="Logo Trovador" class="logo"></div>
+            <div>
+                <ul class="footer">
+                    <li>POLITICAS DE PRIVACIDAD</li>
+                    <li>AYUDA</li>
+                    <li>TERMINOS Y CONDICIONES</li>
+                    <li>POLITICAS DE COOKIES</li>
+                </ul>
+            </div>
+            <div><span>&#169 TFG TROVADOR 2023</span></div>
+        </footer>
+
+    </body>
+</html>

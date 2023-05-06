@@ -1,0 +1,33 @@
+/* Fuentes descargadas y situadas en el directorio fonts*/
+
+
+/* Tipografía principal + variantes */
+@font-face {
+    font-family: 'FuentePrincipal';
+    src: url(../fonts/GraphikRegular.otf);
+}
+
+@font-face {
+    font-family: 'FuentePrincipal-Light';
+    src: url(../fonts/GraphikLight.otf);
+}
+
+@font-face {
+    font-family: 'FuentePrincipal-Thin';
+    src: url(../fonts/GraphikExtralight.otf);
+}
+
+@font-face {
+    font-family: 'FuentePrincipal-Medium';
+    src: url(../fonts/GraphikMedium.otf);
+}
+
+@font-face {
+    font-family: 'FuentePrincipal-Semibold';
+    src: url(../fonts/GraphikSemibold.otf);
+}
+
+@font-face {
+    font-family: 'FuentePrincipal-Bold';
+    src: url(../fonts/GraphikBold.otf);
+}

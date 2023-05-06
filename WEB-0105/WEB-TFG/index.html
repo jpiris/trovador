@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <!-- 
+        Web realizada acorde a los siguientes tamaños de pantalla:
+        móvil: 375 x 914    tablet: 768     escritorio: 1024 x 1600
+    -->
+
+    <head>
+
+        <!-- Ajustes iniciales -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, charset=utf-8">
+        <title>Trovador 2023</title>
+
+        <!-- Enlaces a hojas de estilo -->
+        <link rel="stylesheet" href="css/fonts.css"> <!-- tipografía principal -->
+        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/main-structure.css">
+        <link rel="stylesheet" href="css/apartados-web/s-index.css">
+        <link rel="stylesheet" href="css/popup-login.css">
+        <link rel="stylesheet" href="css/carrusel.css">
+        <link rel="stylesheet" href="css/carrito.css">
+        
+
+        <!-- Enlace tipografía GoogleFonts (secundaria) -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&display=swap" rel="stylesheet">
+
+        <!-- Fav Icon-->
+        <link rel="shortcut icon" href="./img/favicon.png">
+
+    </head>
+
+    <body>
+        
+        <!-- Envios -->
+        <section class="envio">
+            <span>ENVIOS GRATUITOS A TODA ESPAÑA EN PEDIDOS +50€. DEVOLUCIONES GRATUITAS DURANTE 2 SEMANAS</span>
+        </section>
+
+        <!-- Menú de navegación -->
+        <header>
+            <img src="img/logo.png" alt="Logo Trovador" class="logo" height="50">
+            <nav>
+                <ul class="menu-superior">
+                    <li class="apartado-web"><a href="index.html" id="actual">INICIO</a></li>
+                    <li class="apartado-web" id="desplegable">
+                        <a href="./apartados-web/productos.html">PRODUCTOS<img src="./img/ic-abajo.png" height="10"></a>
+                        <ul class="contenido-desplegable">
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">NOVEDADES</a></li>
+                            <li><a href="./apartados-web/subapartado-web/categoria.html">BAÑO</a></li>
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">COCINA</a></li>
+                            <li><a href="./apartados-web/subapartado-web/categoria.html">DORMITORIO</a></li>
+                            <li><a href="./apartados-web/subapartado-web/subcategoria.html" id="rebajas">REBAJAS</a></li>
+                        </ul>
+                    </li>
+                    <li class="apartado-web"><a href="./apartados-web/sobre-nosotros.html">SOBRE NOSOTROS</a></li>
+                    <li class="apartado-web"><a href="./apartados-web/contacto.html">CONTACTO</a></li>
+                </ul>
+                <button id="inicioSesion"><img src="img/ic-usuario.png" alt="Inicio sesión" class="icono" height="20"></button>
+                <!-- cuando inicie sesión reemplazar el de arriba por este -->
+                <!-- <button id="cerrarSesion"><img src="img/ic-trovador.png" alt="Inicio sesión" class="icono" height="23"></button> -->
+                <button id="busqueda"><img src="img/ic-lupa.png" alt="Busqueda" class="icono" height="20"></button>
+                <button id="carritoCompra"><img src="img/ic-carrito.png" alt="Carrito" class="icono" height="20"></button>
+            </nav>
+        </header>
+
+        <!-- POP UP LOGIN & REGISTRO. Funcionamiento al hacer click en el perfil de usuario-->
+        <dialog id="loginDialog">
+            <button id="cerrar"><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="20"></button>
+            <div class="apartadosLogin">
+                <div>
+                    <p>CLIENTES REGISTRADOS</p>
+                    <p>Inicia sesión con tu correo y contraseña</p>
+                    <form action="" method="post">
+                        <input type="text" name="email" id="email" value="Email*">
+                        <input type="text" name="password" id="password" value="Contraseña*">
+                        <br>
+                        <span>¿Has olvidado tu contraseña?</span>
+                        <br>
+                        <button type="submit" id="submit">INICIA SESIÓN</button>
+                    </form>
+                </div>
+                <div>
+                    <p>NUEVOS CLIENTES </p>
+                    <p>Crea una cuenta para guardar tus productos favoritos y agilizar el proceso de compra.</p>
+                    <button id="registro">CREAR CUENTA</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="registroDialog">
+            <button id="cerrar2"><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="20"></button>
+            <div class="apartadoRegistro">
+                <div>
+                    <p>CREA TU CUENTA</p>
+                    <form action="" method="post">
+                        <input type="text" name="name" id="email" value="Nombre*">
+                        <input type="text" name="email" id="email" value="Email*">
+                        <input type="text" name="password" id="password" value="Contraseña*">
+                    
+    
+                        <button type="submit" id="submit">CREAR CUENTA</button>
+                    </form>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="carritoDialog">
+            <button id="cerrar3"><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="20"></button>
+            <div class="apartadosCarrito">
+                <h2>PRODUCTOS SELECCIONADOS</h2>
+                <div class="producto-carrito">
+                    <img class="prod-seleccionado"src="./img/productos/Juego toallas Lavabo C-04.png" alt="">
+                    <div class="prod-texto">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                        <button><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="15"></button>
+                    </div>
+                </div>
+                <hr>
+                <div class="producto-carrito">
+                    <img class="prod-seleccionado"src="./img/productos/Juego toallas Lavabo C-04.png" alt="">
+                    <div class="prod-texto">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                        <button><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="15"></button>
+                    </div>
+                </div>
+                <hr>
+                <!-- repetir por cuantos productos queramos poner -->
+                <div class="producto-carrito">
+                    <img class="prod-seleccionado"src="./img/productos/Juego toallas Lavabo C-04.png" alt="">
+                    <div class="prod-texto">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                        <button><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="15"></button>
+                    </div>
+                </div>
+                <hr>
+                
+                <div class="botones">
+                    <button id="carrito-completo"><a href="./apartados-web/carrito.html">IR AL CARRITO</a></button>
+                    <button id="comprar">REALIZAR COMPRA</button>
+                </div>
+            </div>
+        </dialog>
+
+        <dialog id="busquedaDialog">
+            <button id="cerrar3"><img src="img/ic-cerrar.png" alt="Carrito" class="icono" height="20"></button>
+            <div class="apartadoBusqueda">
+                
+                <button id="busqueda-completa"><a href="./apartados-web/busqueda.html">IR AL CARRITO</a></button>
+            </div>
+        </dialog>
+
+
+        <!-- SECTION: PRESENTACIÓN -->  
+        <section class="slider-presentacion">
+            <div class="contenedor-slider">
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>MODA DE HOGAR HECHA A TU MEDIDA</h1>
+                        <p>Transforma tu hogar en un reflejo auténtico de tu estilo de vida y personalidad, logrando la combinación perfecta entre calidad, estilo y funcionalidad en cada detalle para crear un espacio único.</p>
+                        <div class="rectangulo">
+                            <span><a href="./apartados-web/productos.html">INSPÍRATE CON TROVADOR</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>TOALLAS Y ALBORNOCES</h1>
+                        <p>Envuelve tu cuerpo en la suavidad y calidad de nuestras toallas y albornoces para experimentar una sensación de relajación inigualable después de un largo día. </p>
+                        <div class="rectangulo">
+                            <span><a href="./apartados-web/productos.html">VER BAÑO</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>JUEGOS DE SÁBANAS</h1>
+                        <p>Esenciales para cualquier temporada y son el complemento perfecto para tus sueños, transformando tu hogar en un oasis de comodidad y descanso. </p>
+                        <div class="rectangulo">
+                            <span><a href="./apartados-web/productos.html">VER DOMITORIO</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>PAÑOS DE COCINA</h1>
+                        <p>Agrega un toque de estilo a tu cocina y crea una armonía en tu espacio culinario, permitiendo disfrutar de la preparación de alimentos con comodidad y estilo</p>
+                        <div class="rectangulo">
+                            <span><a href="./apartados-web/productos.html">VER COCINA</a></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CARRUSEL -->
+        <section class="carrusel">
+            <div class="carrusel-titulo">
+                <h2>NUESTROS IMPRESCINDIBLES</h2>
+                <a href="./apartados-web/subapartado-web/subcategoria.html">VER TODOS</a>
+            </div>
+            <button class="pre-btn"><img src="img/ic-anterior.png" alt="" width="50"></button>
+            <button class="nxt-btn"><img src="img/ic-siguiente.png" alt="" width="50"></button>
+            <div class="contenedor-carrusel">
+                <!-- productos slider -->
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="img/productos/Juego toallas Lavabo C-04.png"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: CONOCENOS-->
+        <section class="conocenos">
+            <img src="./img/Logotipo-trovador-04.png" alt="">
+            <div class="texto-conocenos">
+                <h3>CONOCE TROVADOR</h3>
+                <p>Empresa familiar fundada en 1908, líder en la fabricación y venta de moda de hogar en España por más de un siglo. Actualmente, es dirigida por la tercera generación de la familia y, desde la década de 1960 recibe este nombre, gracias a una línea de toallas con un distintivo pictograma. </p>
+                <div class="rectangulo">
+                    <span><a href="./apartados-web/sobre-nosotros.html">DESCUBRE SU HISTORIA</a></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION: INSTAGRAM -->
+        <section class="instagram">
+            <h2>SÍGUENOS EN INSTAGRAM</h2>
+            <div class="fotos-insta">
+                <img src="./img/insta.png" alt="imagen insta">
+                <img src="./img/insta.png" alt="imagen insta">
+                <img src="./img/insta.png" alt="imagen insta">
+                <img src="./img/insta.png" alt="imagen insta">
+                <img src="./img/insta.png" alt="imagen insta">
+                <img src="./img/insta.png" alt="imagen insta">
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div><img src="./img/logo.png" alt="Logo Trovador" class="logo"></div>
+            <div>
+                <ul class="footer">
+                    <li>POLITICAS DE PRIVACIDAD</li>
+                    <li>AYUDA</li>
+                    <li>TERMINOS Y CONDICIONES</li>
+                    <li>POLITICAS DE COOKIES</li>
+                </ul>
+            </div>
+            <div><span>&#169 TFG TROVADOR 2023</span></div>
+        </footer>
+
+        <!-- ENLACE HOJAS JS-->
+        <script src="./js/popup-login.js"></script>
+        <script src="./js/popup-carrito.js"></script>
+        <script src="./js/popup-busqueda.js"></script>
+        <script src="./js/carrusel.js"></script>
+
+    </body>
+</html>

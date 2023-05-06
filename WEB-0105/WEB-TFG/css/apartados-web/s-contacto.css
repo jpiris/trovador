@@ -1,0 +1,279 @@
+/* AJUSTES DE LA PANTALLA CONTACTO */
+/* contacto.html */
+
+
+/* SECTION PRESENTACION */
+.presentacion{
+    background-image: url(../../img/cabecera-contacto.jpg);
+    background-size: cover;
+    background-position: 4;
+}
+
+/* SECTION INFO */
+.info{
+    width: 100%;
+    height: auto;
+    
+    padding-top: 5%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-info{
+    width: 100%;
+    height: 20rem;
+    padding-left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+}
+
+.txt-info{
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.txt-info h3{
+    width: 100%;
+    margin-top: 10px;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 19pt;
+    margin-bottom: 10px;
+}
+
+.txt-info p,
+.txt-info a{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 10pt;
+    line-height: 22px;
+}
+
+.info iframe{
+    width: 100%;
+    height: 20rem;
+    padding-right: 5%;
+    flex: 1;
+}
+
+
+/* SECTION FORMULARIO */
+.formulario-contacto{  
+    width: 100%;
+    padding-top: 1%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.formulario{
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    background-color: var(--color-tarjetas01);
+    border-radius: 10px; 
+
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.formulario h1{
+    width: 60%;
+    font-size: 27pt;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.form-action{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form1{
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.form2{
+    width: 100%;
+    margin-left: 20%;
+    margin-right: 20%;
+
+    display: flex;
+    flex-flow: row wrap;
+    align-items:end;
+    justify-content: center;
+}
+
+.form-action input{ 
+    width: 400px; 
+    height: 40px; 
+
+    margin-top: 0px;  
+    padding-left: 20px;
+    margin-bottom: 20px; 
+
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+}
+
+.form-action textarea{
+    width: 400px; 
+    height: 150px;
+
+    margin-top: 10px;  
+    padding-left: 10px;
+    margin-bottom: 20px; 
+    padding-top: 15px; 
+
+    border-radius: 5px;  
+    border-style: solid; 
+    border-width: 1px; 
+}
+
+.form-action label{
+    display: block; 
+    float: center;  
+}
+
+.form-action button{
+    width: 400px;
+    height: 45px; 
+
+    padding-left: 5px;
+    padding-right: 5px;   
+    margin-bottom: 20px; 
+    margin-top: 10px;   
+
+
+    text-transform: uppercase;
+    background-color: #707070; 
+    border-color: #707070; 
+    border-style: solid; 
+    border-radius: 10px;  
+
+    cursor: pointer;
+}
+
+.form-action button p{
+    color: #fff; 
+}
+
+.aviso{
+    font-size: 8pt;  
+    color: #0e0e0e;  
+}
+
+.aviso span{
+    color: #707070; 
+}
+
+.form-action p{
+    font-size: 14px; 
+    color: #0e0e0e; 
+    margin: 10px;
+}
+
+::-webkit-input-placeholder {
+    color: #a8a8a8;
+    font-family: 'FuentePrincipal';
+}
+
+::-webkit-textarea-placeholder {
+    color: #a8a8a8;
+    font-family: 'FuentePrincipal';
+}
+
+.formulario input:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}
+
+.formulario textarea:focus{
+    outline:0;
+    border: 1px solid #97d848;
+}
+
+
+
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    /* SECTION INFO*/
+    .contenedor-info{
+        padding-left: 0;
+    }
+
+    .info iframe{
+        padding-right: 0;
+    }
+
+    /* SECTION FORMULARIO*/ 
+    .formulario{
+        padding: 5%;
+    }
+
+    .form1,
+    .form2{
+        width: 100%;
+    }
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+    /* SECTION INFO */
+    .info{
+        flex-flow: column nowrap;
+    }
+
+    .contenedor-info{
+        width: 100%;
+        padding-left: 0;
+        margin-bottom: 5%;
+
+        flex-direction: row wrap;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .info iframe{
+        padding-right: 0;
+    }
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    /* SECTION FORMULARIO */
+    .form-action input,
+    .form-action textarea,
+    .form-action button{
+        width: 250px;
+    }
+}
+

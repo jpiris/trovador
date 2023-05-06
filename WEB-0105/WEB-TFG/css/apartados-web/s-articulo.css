@@ -1,0 +1,181 @@
+/* AJUSTES DE LA PANTALLA ARTÍCULO */
+/* articulos.html */
+
+/* SECTION ARTICULO*/
+.articulo{
+    width: 100%;
+    padding-top: 3%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 3%;
+}
+
+.contenedor-general{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* galería modal */
+.articulo-fotos{
+    width: 100%;
+    margin-top: 1%;
+    flex: 1;
+}
+
+.img-grande img{
+    width: 40rem;
+}
+
+.img-miniatura img{
+    width: 10rem;
+}
+
+
+/* txt articulo */
+.articulo-info{
+    width: 100%;
+    margin-left: 5%;
+    flex: 1;
+}
+
+.ref{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: center;
+}
+
+.ref p{
+    font-size: 10pt;
+}
+
+.ref p:nth-child(2){
+    margin-left: 5%;
+}
+
+.articulo-info h3{
+    margin-top: 3%;
+    font-size: 23pt;
+}
+
+.articulo-info h4{
+    margin-top: 1%;
+    font-size: 13pt;
+    font-family: 'FuentePrincipal';
+    text-decoration: underline;
+}
+
+.descripcion{
+    margin-top: 3%;
+    font-size: 12pt;
+}
+
+.ficha{
+    margin-top: 5%;
+}
+
+.ficha h5{
+    font-size: 11pt;
+    font-family: 'FuentePrincipal';
+}
+
+.ficha p{
+    width: 60%;
+    font-size: 10pt;
+    line-height: 15pt;
+}
+
+.add-carrito{
+    margin-top: 5%;
+}
+
+.add-carrito p{
+    font-family: 'FuentePrincipal';
+    font-size: 11pt;
+}
+
+.add-carrito div{
+    margin-top: 1%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: left;
+    align-items: top;
+}
+
+.add-carrito div div{
+    margin-top: 0%;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #e3e3e391;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+
+}
+
+.btn-carrito{
+    height: 40px;
+    padding: 1%;
+    padding-left: 3%;
+    padding-right: 3%;
+    margin-left: 2%;
+    border: none;
+    color: white;
+    background-color: var(--color-secundario-texto);
+}
+
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .contenedor-general{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .articulo-info{
+        margin-top: 5%;
+        margin-left: 0;
+    }
+
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+    .contenedor-general{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .articulo-info{
+        margin-top: 5%;
+        margin-left: 0;
+    }
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    .img-grande img{
+        width: 20rem;
+    }
+    
+    .img-miniatura img{
+        width: 5rem;
+    }
+
+}

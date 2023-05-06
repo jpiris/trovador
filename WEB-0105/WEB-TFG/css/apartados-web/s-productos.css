@@ -1,0 +1,149 @@
+/* AJUSTES DE LA PANTALLA PRODUCTOS */
+/* productos.html */
+
+
+/* SECTION: PRESENTACIÓN */
+.presentacion{
+    background-image: url(../../img/cabecera-productos.jpg);
+    background-size: cover;
+}
+
+
+/* SECTION: TODAS LAS CATEGORÍAS */
+.categorias{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.contenedor-cat{
+    width: 100%;
+    margin-top: 20px;
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tit-cat{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cat{
+    background-color: #E3E3E3;
+    width: 90%;
+    height: 500px;
+
+    display: flex;
+    justify-content: left;
+    align-items: flex-end;
+
+    background-size: 100% 100%;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    background-image: url(../../img/seccion-baño.jpg);
+}
+
+.cat2{
+    width: 90%;
+    height: 500px;
+    margin-left: 2%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-content: center;
+}
+
+.cat2 .cat{
+    height: 235px; 
+    width: 100%;
+}
+
+/* configurar imagenes */
+.cat2 .cat:nth-child(1){
+    background-image: url(../../img/seccion-cocina.jpg);
+}
+.cat2 .cat:nth-child(2){
+    background-image: url(../../img/seccion-dormitorio.jpg);
+}
+
+.cat span{
+    width: 100%;
+
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+
+    font-family: 'FuentePrincipal';
+    font-size: 15pt;
+    background-color: #e3e3e36b;
+}
+
+
+/* SECTION: REBAJAS */
+.rebajas{
+    width: 100%;
+    margin-bottom: 100px;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+}
+
+.rebajas a{
+    width: 100%;
+    height: 400px;
+
+    background-image: url(../../img/seccion-rebajas.jpg);
+    background-size: 100% 100%;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.rebajas a span{
+    font-family: 'FuentePrincipal-Medium';
+    font-size: 25pt;
+    color: rgb(230, 23, 23);
+
+    padding-top: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 10px;
+
+    background-color: #e3e3e391;
+}
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+
+
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+}

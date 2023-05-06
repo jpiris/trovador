@@ -1,0 +1,314 @@
+/* AJUSTES DE LA PANTALLA DE INICIO */
+/* index.html */
+
+
+/* SECTION: PRESENTACIÓN */
+.slider-presentacion{
+    width: 100%;
+    overflow: hidden;
+}
+
+.contenedor-slider{
+    width: 400%;
+    padding: 0;
+    display: flex;
+    animation: slide 20s infinite normal linear;
+}
+
+.contenido-slider{
+    width: 100%;
+    height: 800px;
+
+    background-size: 100% 100%;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.contenido-slider:before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(252, 252, 252, 0.414);
+}
+
+/* configurar img */
+.contenido-slider:nth-child(1){
+    background-image: url(../../img/slider01.jpg);
+}
+.contenido-slider:nth-child(2){
+    background-image: url(../../img/slider02.jpg);
+}
+.contenido-slider:nth-child(3){
+    background-image: url(../../img/slider03.jpg);
+}
+.contenido-slider:nth-child(4){
+    background-image: url(../../img/slider04.jpg);
+}
+
+.texto-slider{
+    width: 100%;
+    height: 800px;
+    margin: auto;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.texto-slider p{
+    width: 750px;
+    margin-top: 15px;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 13pt;
+    line-height: 25px;
+}
+
+/* Animación slider */
+@keyframes slide{
+    0% {margin-left: 0%;}
+    20% {margin-left: 0%;}
+
+    25% {margin-left: -100%;}
+    45% {margin-left: -100%;}
+
+    50% {margin-left: -200%;}
+    70% {margin-left:-200%;}
+
+    75% {margin-left: -300%;}
+    95% {margin-left: -300%;}
+}
+
+.rectangulo{
+    width: 200px;
+    height: 35px;
+    background-color: #FFFFFF;;
+    margin-top: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rectangulo span a{
+    font-family: 'FuentePrincipal';
+    font-size: 9pt;
+}
+
+
+/* SECTION: CONOCE TROVADOR */
+.conocenos{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+
+    background-color: var(--color-tarjetas01);
+}
+
+.conocenos img{
+    width: 500px;
+    height: 250px;
+    object-fit: contain;
+}
+
+.texto-conocenos{
+    margin-left: 10%;
+    width: 50%;
+}
+
+.texto-conocenos p{
+    width: 90%;
+    margin-top: 10px;
+}
+
+.texto-conocenos .rectangulo{
+    width: 210px;
+    height: 40px;
+    background-color: var(--color-tarjetas02);
+    margin-top: 20px;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* SECTION: INSTAGRAM */
+.instagram{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.fotos-insta{
+    width: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fotos-insta img{
+    width: 15rem;
+    object-fit: contain;
+    margin: 1%;
+    margin-left: 0;
+}
+
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+
+    .contenido-slider{
+        height: 700px;
+    }
+    .texto-slider{
+        width: 100%;
+        height: 700px;
+    }
+
+    .fotos-insta{
+        width: 100%;
+        margin-top: 20px;
+    
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+    .contenido-slider{
+        height: 500px;
+    }
+    .texto-slider{
+        width: 90%;
+        height: 500px;
+    }
+
+    .texto-conocenos{
+        margin-left: 0;
+        width: 100%;
+        
+        text-align: center;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    
+    }
+
+    .rectangulo{
+        margin: auto;
+    }
+
+    .fotos-insta{
+        width: 100%;
+        margin-top: 20px;
+    
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    .contenido-slider{
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .texto-slider{
+        padding-top: 5%;
+        width: 90%;
+        height: 300px;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .texto-slider p{
+        display: none;
+    }
+
+    .rectangulo{
+        margin-top: 2%;
+    }
+
+    /* CONOCENOS */
+    .conocenos img{
+        width: 300px;
+        height: auto;
+        margin-bottom: 2%;
+    }
+    .texto-conocenos{
+        margin-left: 0;
+        margin-bottom: 3%;
+        width: 100%;
+        
+        text-align: center;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    
+    }
+
+    /* INSTAGRAM */
+    .instagram{
+        align-items: center;
+
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: center;
+    }
+
+    .intagram h2{
+        text-align: center;
+    }
+
+    .fotos-insta{
+        width: 100%;
+        margin-top: 20px;
+    
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .fotos-insta img{
+        width: 5rem;
+    }
+}

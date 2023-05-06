@@ -1,0 +1,295 @@
+/* ESTRUCTURA GENERAL */
+/* común a todos los apartados */
+
+
+/* Ajustes del BANNER ENVÍO */
+.envio{
+    width: 100%;
+    height: 1rem;
+    padding-right: 5%;
+    padding-left: 5%;
+
+    background-color: #111111;
+    color: var(--color-tarjetas01);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.envio span{ font-size: 9pt; }
+
+
+/* Ajustes del MENÚ SUPERIOR */
+header{
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+    
+    padding-left: 5%;
+    padding-right: 5%;
+
+    display: flex;
+    flex-direction: row nowrap;
+    align-items: center;
+    justify-content: center;
+}
+
+header div{
+    flex: 1;
+}
+
+.logo{
+    height: 50px;
+}
+
+nav{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    align-items: center;
+    flex: 15;
+}
+
+nav ul{
+    width: 40%;
+    margin-right: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+nav ul li{
+    padding: 10px;
+}
+
+a{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 11pt; 
+}
+
+#actual{ font-family: 'FuentePrincipal'; }
+
+.ic{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.ic img{
+    margin: 3%;
+}
+
+
+/* Ajustes del MENÚ DESPLEGABLE */
+#desplegable{
+    display: inline-block;
+    position: relative;
+    z-index: 1000;
+}
+
+.contenido-desplegable{
+    width: 110%;
+    display: none;
+    position: absolute;
+    top: 40px;
+    overflow: auto;
+    background: #F7F7F7;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.1);
+}
+
+#desplegable:hover .contenido-desplegable{
+    display: block;
+}
+
+.contenido-desplegable li{
+    margin: auto;
+    padding: 10px;
+}
+
+.contenido-desplegable li:hover{
+    background-color: rgb(188, 188, 188);
+    color: white;
+}
+
+.contenido-desplegable a{
+    font-family: 'FuentePrincipal';
+    font-size: 9pt; 
+}
+
+#rebajas{
+    font-family: 'FuentePrincipal';
+    color: rgb(255, 0, 0);
+}
+
+
+/* Ajustes SECTION PRESENTACIÓN */
+.presentacion{
+    width: 100%;
+    height: 20rem;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    position: relative;
+
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.presentacion:before{
+    content: ' ';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(252, 252, 252, 0.608);
+}
+
+.texto-presentacion{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+}
+
+.texto-presentacion p{
+    margin-top: 1%;
+    font-family: 'FuentePrincipal-Light';
+    font-size: 13pt;
+    line-height: 25px;
+    position: relative;
+}
+
+
+/* Ajustes del FOOTER */
+footer{
+    width: 100%;
+    height: 4rem;
+    margin-top: 5%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--fondo-secundario);
+}
+
+footer div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+footer div:nth-child(2){
+    flex: 3;
+}
+
+footer img{
+    height: 2rem;
+    opacity: 85%;
+}
+
+footer ul{
+    width: 95%;
+    display: flex;
+    flex-flow: row  wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+footer ul li{
+    font-size: 8pt;
+    opacity: 85%;
+    flex: 1;
+    text-align: center;
+    line-height: 1rem;
+}
+
+footer span{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 8pt;
+    opacity: 85%;
+}
+
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+    
+    /* MENÚ SUPERIOR */
+    .logo{
+        height: 35px;
+    }
+
+    nav ul{
+        width: 70%;
+    }
+
+    /* PRESENTACION*/
+    .texto-presentacion p{
+        width: 60%;
+    }
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+    /* MENÚ SUPERIOR */
+    nav ul{
+        width: 100%;
+    }
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    /* ENVÍO */
+    .envio{
+        height: auto;
+        padding: 2%;
+    }
+
+    /* PRESENTACION */
+    .texto-presentacion h1{
+        width: 85%;
+        line-height: 47px;
+    }
+
+    .texto-presentacion p{
+        width: 85%;
+        margin-top: 3%;
+        line-height: 22px;
+    }
+
+    /* FOOTER */
+    footer{
+        height: auto;
+        flex-direction: column;
+    }
+
+    footer div{
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+}

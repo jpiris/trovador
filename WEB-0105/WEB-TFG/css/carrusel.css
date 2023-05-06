@@ -1,0 +1,215 @@
+/* HOJA DE ESTILO PARA EL CARRUSEL */
+/* Se usa en: index.html, productos.html y categoria.html */
+
+/* Título apartado */
+.carrusel-titulo{
+    padding-top: 5%;
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrusel-titulo-sub{
+    padding-top: 5%;
+    margin-bottom: 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.carrusel-titulo a{
+    font-size: 10pt;
+    margin-right: 10px;
+}
+
+
+/* Ajustes del carrusel */ 
+.carrusel{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 5%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carrusel-sub{
+    width: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0%;
+    overflow: hidden;
+    position: relative;
+}
+
+.contenedor-carrusel{
+    width: 100%;
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+}
+
+.contenedor-carrusel::-webkit-scrollbar{
+    display: none;
+}
+
+.producto{
+    flex: 0 0 auto;
+    width: 290px;
+    height: 100%;
+
+    margin: 9.5px;
+}
+
+.producto:nth-child(1),
+.producto:nth-child(6){
+    margin-left: 0; 
+}
+
+.producto:last-child{
+    margin-right: 0; 
+}
+
+.producto-img{
+    width: 290px;
+    height: 200px;
+    overflow: hidden;
+
+    position: relative;
+}
+
+.producto img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrito-btn{
+    width: 90%;
+    padding: 10px;
+
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #FFFFFF;
+    
+    transform: translateX(-50%);
+    transition: 0.5s;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.producto:hover .carrito-btn{
+    opacity: 1;
+}
+
+.carrito-btn:hover{
+    background-color: var(--color-secundario-texto);
+    color: white;
+}
+
+.producto-info{
+    width: 290px;
+    margin-top: 5%;
+
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.producto-info p,
+.producto-info span{
+    font-family: 'FuentePrincipal-Light';
+    font-size: 9pt;
+}
+
+
+/* Ajustes botones carrusel */
+.pre-btn,
+.nxt-btn{
+    height: 100%;
+    border: none;
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F7F7F7;
+}
+
+.pre-btn{
+    left: 0;
+    padding-left: 5%;
+}
+
+.nxt-btn{
+    right: 0;
+    padding-right: 5%;
+}
+
+.pre-btn img,
+.nxt-btn img{
+    opacity: 0.2;
+}
+
+.pre-btn:hover img,
+.nxt-btn:hover img{
+    opacity: 1;
+}
+
+
+
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Adaptación para todo */
+@media (max-width: 1199px) {
+
+
+
+    .producto{
+        width: 145px;
+    }
+
+    .producto-img{
+        width: 145px;
+        height: 100px;
+    }
+
+    .producto-info{
+        width: 145px;
+    }
+
+    .pre-btn{
+        width: 40px;
+        padding-left:1%;
+    }
+    
+    .nxt-btn{
+        width: 40px;
+        padding-right: 1%;
+    }
+
+}
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    .pre-btn img{
+        width: 30px;
+        padding-left: 1%;
+    }
+    
+    .nxt-btn img{
+        width: 30px;
+        padding-right: 1%;
+    }
+
+}

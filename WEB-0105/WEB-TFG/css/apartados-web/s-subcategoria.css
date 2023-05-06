@@ -1,0 +1,33 @@
+/* AJUSTES DE LAS PANTALLAS SUBCATEGORÍA */
+/* subcategoría.html */
+
+/* SECTION: SUBAPARTADO CATEGORÍAS */
+.subapartado{
+    width: 100%;
+    height: 100%;
+    padding-left: 10%;
+    padding-right: 10%;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.tit-sub{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor-productos{
+    width: 100%;
+    height: 100%;
+    margin-top: 20px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+
+    overflow-x: auto;
+}
