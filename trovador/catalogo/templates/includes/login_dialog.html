@@ -9,13 +9,15 @@
             <div>
                 <p>CLIENTES REGISTRADOS</p>
                 <p>Inicia sesión con tu correo y contraseña</p>
-                <form action="" method="post">
-                    <input type="text" name="email" id="email" value="Email*">
-                    <input type="text" name="password" id="password" value="Contraseña*">
+                <form action="{% url 'login' %}" method="post">
+                    {% csrf_token %}
+                    <input type="text" name="username" id="username" placeholder="Usuario*">
+                    <input type="password" name="password" id="password" placeholder="Contraseña*">
                     <br>
                     <span>¿Has olvidado tu contraseña?</span>
                     <br>
-                    <button type="submit" id="submit">INICIA SESIÓN</button>
+                    <input type="hidden" name="next" value="{{ request.get_full_path }}">
+                    <button type="submit" id="submit" value="login">INICIA SESIÓN</button>
                 </form>
             </div>
             <div>
