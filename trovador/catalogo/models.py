@@ -3,6 +3,7 @@ from tokenize import blank_re
 from django.db import models
 from django.urls import reverse
 from django.contrib.auth.models import AbstractUser
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 class User(AbstractUser):
     pass
@@ -44,6 +45,10 @@ class Producto(models.Model):
     activo = models.BooleanField(help_text="Activo, aparece en catalogo")
     destacado = models.BooleanField(help_text="Destacado, aparece en la pagina principal")
     stock = models.IntegerField(help_text="Unidades en stock")
+    porcentajeDescuento = models.IntegerField(default=0, help_text="Porcentaje de descuento", validators=[
+        MaxValueValidator(100),
+        MinValueValidator(0),
+    ])
     fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación del producto")
     imagen1 = models.ImageField(upload_to='uploads/')
     imagen2 = models.ImageField(upload_to='uploads/', blank=True)

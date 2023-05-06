@@ -55,5 +55,5 @@ def busqueda(request):
         'categoria': None,
         'categorias_hijas': lista_categorias,
         'productos': lista_productos,
-        'titulo_alternativo': 'RESULTADOS DE LA BUSQUEDA'
+        'titulo_alternativo': f'{len(lista_productos)} RESULTADOS' if len(lista_productos) > 1 else f'{len(lista_productos)} RESULTADO'
     })
