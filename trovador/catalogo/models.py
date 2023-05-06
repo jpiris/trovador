@@ -10,9 +10,9 @@ class User(AbstractUser):
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=50, help_text="Nombre de la categoria")
-    descripcion_corta = models.TextField(max_length=200, blank=True, help_text="Descripcion corta (max 200 caracteres)")
+    titulo = models.TextField(max_length=200, blank=True, help_text="Titulo de la pàgina del catalogo")
     #Descripcion larga deberia ser HTML: https://pypi.org/project/django-tinymce/
-    descripcion_larga = models.TextField(max_length=1000, blank=True, help_text="Descripcion larga")
+    descripcion = models.TextField(max_length=1000, blank=True, help_text="Descripcion larga")
     meta_titulo = models.SlugField(null=False, unique=True)
     destacado = models.BooleanField(help_text="Destacado, aparece en la pagina principal")
 

@@ -3,7 +3,7 @@ from django.contrib.auth.admin import UserAdmin
 from catalogo.models import Producto, Categoria, User
 
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ("nombre", "descripcion_corta", "productos_count", "destacado")
+    list_display = ("nombre", "titulo", "productos_count", "destacado")
     prepopulated_fields = {"meta_titulo": ("nombre",)}
 
 class ProductoAdmin(admin.ModelAdmin):
