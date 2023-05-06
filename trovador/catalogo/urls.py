@@ -11,5 +11,7 @@ urlpatterns = [
     path('categoria/<slug:slug>/', views.categoria_detail, name='categoria'),
     path('contacto/', views.contacto, name='contacto'),
     path('sobre-nosotros/', views.sobrenosotros, name='sobre-nosotros'),
+    path('carrito/', views.carrito, name='carrito'),
+    path('rebajas/', views.rebajas, name='rebajas'),
 ] 
 

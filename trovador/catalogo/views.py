@@ -39,3 +39,9 @@ def contacto(request):
 
 def sobrenosotros(request):
     return render(request, 'sobre-nosotros.html')
+
+def carrito(request):
+    return render(request, 'carrito.html')
+
+def rebajas(request):
+    return render(request, 'rebajas.html')
