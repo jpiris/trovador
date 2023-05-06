@@ -2,8 +2,10 @@
 
 <dialog id="busquedaDialog">
     <button id="cerrar4"><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="20"></button>
-    <div class="apartadoBusqueda">
-        <input type="search" id="search" name="search" value="introduce productos a buscar">
-        <button id="busqueda-completa"><a href="./busqueda.html">REALIZAR BÚSQUEDA</a></button>
-    </div>
+    <form action="{% url 'busqueda' %}" method="get">
+        <div class="apartadoBusqueda">
+            <input type="search" id="search" name="search" placeholder="introduce productos a buscar">
+            <button id="busqueda-completa" type="submit">REALIZAR BÚSQUEDA</button>
+        </div>
+    </form>
 </dialog>
