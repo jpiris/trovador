@@ -7,48 +7,155 @@
 
 {% block content %}
         <!-- SECTION: PRESENTACIÓN -->
-        <section class="presentacion">
-            <div class="texto-presentacion">
-                <h1>MODA DE HOGAR HECHA A TU MEDIDA</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
-                <div class="rectangulo">
-                    <span> <a href="{% url 'productos' %}">INSPIRATE CON TROVADOR</a></span>
+        <!-- SECTION: PRESENTACIÓN -->  
+        <section class="slider-presentacion">
+            <div class="contenedor-slider">
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>MODA DE HOGAR HECHA A TU MEDIDA</h1>
+                        <p>Transforma tu hogar en un reflejo auténtico de tu estilo de vida y personalidad, logrando la combinación perfecta entre calidad, estilo y funcionalidad en cada detalle para crear un espacio único.</p>
+                        <div class="rectangulo">
+                            <span><a href="{% url 'productos' %}">INSPÍRATE CON TROVADOR</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>TOALLAS Y ALBORNOCES</h1>
+                        <p>Envuelve tu cuerpo en la suavidad y calidad de nuestras toallas y albornoces para experimentar una sensación de relajación inigualable después de un largo día. </p>
+                        <div class="rectangulo">
+                            <span><a href="{% url 'productos' %}">VER BAÑO</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>JUEGOS DE SÁBANAS</h1>
+                        <p>Esenciales para cualquier temporada y son el complemento perfecto para tus sueños, transformando tu hogar en un oasis de comodidad y descanso. </p>
+                        <div class="rectangulo">
+                            <span><a href="{% url 'productos' %}">VER DOMITORIO</a></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="contenido-slider">
+                    <div class="texto-slider">
+                        <h1>PAÑOS DE COCINA</h1>
+                        <p>Agrega un toque de estilo a tu cocina y crea una armonía en tu espacio culinario, permitiendo disfrutar de la preparación de alimentos con comodidad y estilo</p>
+                        <div class="rectangulo">
+                            <span><a href="{% url 'productos' %}">VER COCINA</a></span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SECTION: NUESTROS IMPRESCIBLES -->
-        <section class="imprescindibles">
-            <div class="tit-imp">
+        <!-- SECTION: CARRUSEL -->
+        <section class="carrusel">
+            <div class="carrusel-titulo">
                 <h2>NUESTROS IMPRESCINDIBLES</h2>
-                <a href="{% url 'productos' %}">VER TODOS</a>
+                <a href="./apartados-web/subapartado-web/subcategoria.html">VER TODOS</a>
             </div>
-            <div class="contenedor-imp">
-                <div class="contenido-imp">
-                    <div class="img-imp"></div>
-                    <div class="texto-imp">
-                        <span>Nombre del producto</span>
+            <button class="pre-btn"><img src="{% static 'img/ic-anterior.png' %}" alt="" width="50"></button>
+            <button class="nxt-btn"><img src="{% static 'img/ic-siguiente.png' %}" alt="" width="50"></button>
+            <div class="contenedor-carrusel">
+                <!-- productos slider -->
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
                         <span>00.00€</span>
                     </div>
                 </div>
-                <div class="contenido-imp">
-                    <div class="img-imp"></div>
-                    <div class="texto-imp">
-                        <span>Nombre del producto</span>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
                         <span>00.00€</span>
                     </div>
                 </div>
-                <div class="contenido-imp">
-                    <div class="img-imp"></div>
-                    <div class="texto-imp">
-                        <span>Nombre del producto</span>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
                         <span>00.00€</span>
                     </div>
                 </div>
-                <div class="contenido-imp">
-                    <div class="img-imp"></div>
-                    <div class="texto-imp">
-                        <span>Nombre del producto</span>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
+                        <span>00.00€</span>
+                    </div>
+                </div>
+                <div class="producto">
+                    <div class="producto-img">
+                        <a href="#"><img src="{% static 'img/productos/Juego toallas Lavabo C-04.png' %}"  alt=""></a>
+                        <button class="carrito-btn">Añadir al carrito</button>
+                    </div>
+                    <div class="producto-info">
+                        <p>Nombre del producto</p>
                         <span>00.00€</span>
                     </div>
                 </div>
@@ -61,7 +168,7 @@
             <div class="imagen"></div>
             <div class="texto-conocenos">
                 <h3>CONOCE TROVADOR</h3>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+                <p>Empresa familiar fundada en 1908, líder en la fabricación y venta de moda de hogar en España por más de un siglo. Actualmente, es dirigida por la tercera generación de la familia y, desde la década de 1960 recibe este nombre, gracias a una línea de toallas con un distintivo pictograma. </p>
                 <div class="rectangulo">
                     <span> <a href="{% url 'sobre-nosotros' %}">DESCUBRE SU HISTORIA</a></span>
                 </div>
