@@ -163,3 +163,64 @@ button{
 }
 
 
+/********* ADAPTACIÓN A DISPOSITIVOS *********/
+
+/*  Tablets en horizontal y escritorios normales */
+@media (min-width: 768px) and (max-width: 1199px) {
+    
+
+}
+
+
+/*  Móviles en horizontal o tablets en vertical */
+@media (max-width: 767px) { 
+
+    #loginDialog,
+    #registroDialog{
+        width: 90%;
+        height: 500px;
+        background-color: white;
+        margin: auto;
+        border: none;
+    
+        position: relative;
+    }
+
+}
+
+
+/*  Móviles en vertical */
+@media (max-width: 480px) {
+
+    .apartadosLogin{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .apartadosLogin div{
+        width: 80%;
+        margin: 10px;
+        margin-bottom: 40px;
+    }
+
+    .apartadoRegistro{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    }
+
+    .apartadoRegistro div{
+        width: 80%;
+        margin: 10px;
+        margin-bottom: 40px;
+    }
+
+
+}
