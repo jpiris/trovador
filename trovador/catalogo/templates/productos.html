@@ -1,62 +1,44 @@
 {% extends "base_generic.html" %}
 
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" href="{% static './css/apartados-web/s-productos.css' %}">
+{% endblock extra_css %}
+
 {% block content %}
 <!-- SECTION: PRESENTACIÓN PRODUCTOS -->
 <section class="presentacion">
     <div class="texto-presentacion">
-        <div class="ubi">
-            <a href="{% url 'index' %}">INICIO</a>
-            <span>- PRODUCTOS</span>
-        </div>
-        <h1>TÍTULO DE PRESENTACIÓN</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate magni soluta animi corporis vero obcaecati quo accusamus quis cupiditate.</p>
+        <h1>DESCUBRE NUESTROS PRODUCTOS</h1>
+        <p>Textiles de la mejor calidad y con gran variedad de coloridos, perfectos para cualquier hogar.</p>
     </div>
 </section>
 
 {% if productos_list %}
 <!-- SECTION: NOVEDADES -->
-<section class="imprescindibles">
-    <div class="tit-imp">
-        <h2>RECIEN LLEGADOS</h2>
+<section class="carrusel">
+    <div class="carrusel-titulo">
+        <h2>RECIÉN LLEGADOS</h2>
         <a href="./subapartado-web/subcategoria.html">VER TODOS</a>
     </div>
-    <div class="contenedor-imp">
+    <button class="pre-btn"><img src="{% static './img/ic-anterior.png' %}" alt="" width="50"></button>
+    <button class="nxt-btn"><img src="{% static './img/ic-siguiente.png' %}" alt="" width="50"></button>
+    <div class="contenedor-carrusel">
 
         {% for producto in productos_list %}
-        <a href="{{ producto.get_absolute_url }}">
-            <div class="contenido-imp">
-                <div class="img-imp">
-                    <img class="img-imp" src={{ producto.imagen1.url }}> {% comment %} falta css para ajustar la imagen  {% endcomment %}
-                </div>
-                <div class="texto-imp">
-                    <span>{{ producto.nombre }}</span>
-                    <span>{{ producto.precio }}€</span>
-                </div>
+        <div class="producto">
+            <div class="producto-img">
+                <a href="{{ producto.get_absolute_url }}">
+                    <img src="{{ producto.imagen1.url }}"  alt="">
+                </a>
+                <button class="carrito-btn">Añadir al carrito</button>
             </div>
-        </a>
+            <div class="producto-info">
+                <p>{{ producto.nombre }}</p>
+                <span>{{ producto.precio }}€</span>
+            </div>
+        </div>
         {% endfor %}
-
-        {% comment %} <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div>
-        <div class="contenido-imp">
-            <div class="img-imp"></div>
-            <div class="texto-imp">
-                <span>Nombre del producto</span>
-                <span>00.00€</span>
-            </div>
-        </div> {% endcomment %}
 
     </div>
 </section>
@@ -67,11 +49,10 @@
 <!-- SECTION: TODAS LAS CATEGORÍAS -->
 <section class="categorias">
     <h2>CATEGORIAS</h2>
-    <div class="contenedor-cat">
 
+    <div class="contenedor-cat">
         {% with categorias_destacadas|index:0 as cat1 %}
-        <a href="{{ cat1.get_absolute_url }}" class="cat">
-            {% comment %} <img src={{ cat1.imagen1.url }}> {% endcomment %}
+        <a href="{{ cat1.get_absolute_url }}" class="cat" style="background-image:url('{{ cat1.imagen1.url }}');">
             <span>{{ cat1.nombre|upper }}</span>
         </a>
         {% endwith %}
@@ -81,9 +62,8 @@
         <div class="cat2">
 
             {% with categorias_destacadas|index:1 as cat2 %}
-            <div class="cat" style="background-image:url('{{ cat2.imagen1.url }}'); background-size:cover">
-                <a href="{{ cat2.get_absolute_url }}" class="cat">
-                    {% comment %} <img src={{ cat2.imagen1.url }}> {% endcomment %}
+            <div class="cat">
+                <a href="{{ cat2.get_absolute_url }}" class="cat" style="background-image:url('{{ cat2.imagen1.url }}');">
                     <span>{{ cat2.nombre|upper }}</span>
                 </a>
             </div>
@@ -91,8 +71,7 @@
 
             {% with categorias_destacadas|index:2 as cat3 %}
             <div class="cat">
-                <a href="{{ cat3.get_absolute_url }}" class="cat">
-                    {% comment %} <img src={{ cat3.imagen1.url }}> {% endcomment %}
+                <a href="{{ cat3.get_absolute_url }}" class="cat" style="background-image:url('{{ cat3.imagen1.url }}');">
                     <span>{{ cat3.nombre|upper }}</span>
                 </a>
             </div>
@@ -107,7 +86,9 @@
 <!-- SECTION: REBAJAS -->
 <section class="rebajas">
     <div>
-        <span>REBAJAS</span>
+        <a href="{% url 'rebajas' %}">
+            <span>REBAJAS</span>
+        </a>
     </div>
 </section>
 {% endblock %}
