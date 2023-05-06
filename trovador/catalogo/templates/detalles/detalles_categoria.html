@@ -1,98 +1,81 @@
 {% extends "base_generic.html" %}
 
 {% block extra_css %}
-    <style>
-        .container_items {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: space-between;
-		}
-		.item {
-			width: calc(25% - 10px);
-			height: 100px;
-			margin-bottom: 20px;
-			background-color: #F5F5F5;
-			border: 1px solid #DDDDDD;
-			box-sizing: border-box;
-		}
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .col {
-            flex-basis: calc(50% - 10px);
-            margin-bottom: 20px;
-        }
-
-        .col p {
-            margin-bottom: 10px;
-        }
-
-        .col img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .header {
-			width: 100%;
-			margin-bottom: 20px;
-			text-align: center;
-			font-size: 24px;
-			font-weight: bold;
-		}
-    </style>
-{% endblock %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/apartados-web/s-subcategoria.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
-    <div class="container">
-        <div class="header"><h1>Categoría: {{ categoria.nombre }}</h1></div>
-
-        <div class="col">
-            <img src={{ categoria.imagen1.url }} alt="Imagen de ejemplo">
-        </div>
-
-        <div class="col">
-            <p><strong>Nombre:</strong> <a href="">{{ categoria.nombre }}</a></p> <!-- author detail link not yet defined -->
-            <p><strong>Descripcion corta:</strong> {{ categoria.descripcion_corta }}</p>
-            <p><strong>Descripcion larga:</strong> {{ categoria.descripcion_larga }}</p>
-
-            {% if categoria.categoria_padre %}
-            <p><strong>Categoria padre:</strong> 
-                <a href={{ categoria.categoria_padre.get_absolute_url }}>
-                    <span>{{ categoria.categoria_padre.nombre }}</span></p>
-                </a>
-            {% endif %}
-
-            {% if categorias_hijas %}
-            <p>
-                <strong>Categorias hijas:</strong> 
-                {% for categoria in categorias_hijas %}
-                    <a href={{ categoria.get_absolute_url }}> <span>{{ categoria.nombre }}</span> </a>
-                {% endfor %}
-            </p>
-            {% endif %}
-        </div>
+{% load static %}
+<!-- SECTION:PRESENTACIÓN CATEGORÍAS-->
+<section class="presentacion" style="background-image:url({{ categoria.imagen1.url }}); background-size: cover;">
+    <div class="texto-presentacion">
+        <h1>{{ categoria.titulo }}</h1>
+        <p style="width: 70%;">{{ categoria.descripcion }}</p>
     </div>
+</section>
 
-    {% if productos %}
+{% load get_productos %}
+<!-- SECTION: CARRUSEL -->
+<!-- Subcategoría 1 -->
+{% if categorias_hijas %}
+{% for categoria_h in categorias_hijas %}
+<section class="carrusel-sub">
     <div class="container_items">
-        {% for producto in productos %}
-		<div class="item">
-            <a href={{ producto.get_absolute_url }}>
-                <span> {{ producto.nombre }} </span>
-            </a>
+        <div class="carrusel-titulo-sub">
+            <h2>{{ categoria_h.nombre }}</h2>
+            <a href="{{ categoria_h.get_absolute_url }}">VER TODOS</a>
+        </div>
+        <button class="pre-btn"><img src="{% static 'img/ic-anterior.png' %}" alt="" width="50"></button>
+        <button class="nxt-btn"><img src="{% static 'img/ic-siguiente.png' %}" alt="" width="50"></button>
+        <div class="contenedor-carrusel">
+
+            {% for producto in productos_categoria|get_productos:categoria_h %}
+            <!-- productos slider -->
+            <div class="producto">
+                <div class="producto-img">
+                    <a href="{{ producto.get_absolute_url }}"><img src="{{ producto.imagen1.url }}"  alt=""></a>
+                    <button class="carrito-btn">Añadir al carrito</button>
+                </div>
+                <div class="producto-info">
+                    <p>{{ producto.nombre }}</p>
+                    <span>{{ producto.precio }}€</span>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </section>    
+{% endfor %}
+{% endif %}
+
+{% with productos_categoria|get_productos:categoria as productos %}
+{% if productos %}
+<!-- SECTION: SUBAPARTADO -->
+<section class="subapartado">
+    <div class="tit-sub">
+        <h2>{{ categoria.nombre }}</h2>
+    </div>
+    <div class="contenedor-productos">
+
+        {% for p in productos %}
+        <div class="producto">
+            <div class="producto-img">
+                <img src="{{ p.imagen1.url }}"  alt="">
+                <button class="carrito-btn">Añadir al carrito</button>
+            </div>
+            <div class="producto-info">
+                <p>{{ p.nombre }}</p>
+                <span>{{ p.precio }}€</span>
+            </div>
         </div>
         {% endfor %}
-	</div>
-    {% endif %}
-  
+
+    </div>
+    
+</section>
+{% endif %}
+
+{% endwith %}
+
 {% endblock %}
