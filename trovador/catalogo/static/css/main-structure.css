@@ -93,7 +93,7 @@
 
 .contenido-desplegable{
     width: 110%;
-    height: 260px;
+    height: auto;
     
     display: none;
     position: absolute;

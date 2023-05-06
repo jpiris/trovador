@@ -39,7 +39,7 @@
     margin-top: 5%;
 }
 
-.apartadoBusqueda input{
+#search{
     width: 50%;
     height: 50px;
     text-align: center;
