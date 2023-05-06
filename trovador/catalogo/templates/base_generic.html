@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 {% load static %}
+{% load get_subcategorias %}
 
     <!--
         Web realizada acorde a los siguientes tamaños de pantalla:
@@ -63,9 +64,13 @@
                     <a href="{% url 'productos' %}">PRODUCTOS <img src="{% static './img/ic-abajo.png' %}" height="10" id="_desplegable"><span class="material-icons" id="_drch">keyboard_arrow_right</span></a>
                     <div class="contenido-desplegable" id="contenido_desplegable">
                         <a href="./apartados-web/subapartado-web/subcategoria.html">NOVEDADES</a>
-                        <a href="./apartados-web/subapartado-web/categoria.html">BAÑO</a>
-                        <a href="./apartados-web/subapartado-web/subcategoria.html">COCINA</a>
-                        <a href="./apartados-web/subapartado-web/categoria.html">DORMITORIO</a>
+
+                        {% with res|get_subcategorias:None as subcategorias %}
+                        {% for categoria in subcategorias %}
+                        <a href="{{ categoria.get_absolute_url }}">{{ categoria.nombre }}</a>
+                        {% endfor %}
+                        {% endwith %}
+                        
                         <a href="./apartados-web/subapartado-web/subcategoria.html" id="rebajas">REBAJAS</a>
                     </div>
                 </li>
