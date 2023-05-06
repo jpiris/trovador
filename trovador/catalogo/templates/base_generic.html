@@ -49,38 +49,45 @@
         {% endblock %}
 
         {% block navbar %}
-        <header>
-            <img src="{% static 'img/logo.png' %}" alt="Logo Trovador" class="logo" height="50">
-            <nav>
-                <ul class="menu-superior">
-                    <li class="apartado-web"><a href="{% url 'index' %}" id="actual">INICIO</a></li>
-                    <li class="apartado-web" id="desplegable">
-                        <a href="{% url 'productos' %}">PRODUCTOS<img src="{% static './img/ic-abajo.png' %}" height="10"></a>
-                        <ul class="contenido-desplegable">
-                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">NOVEDADES</a></li>
-                            <li><a href="./apartados-web/subapartado-web/categoria.html">BAÑO</a></li>
-                            <li><a href="./apartados-web/subapartado-web/subcategoria.html">COCINA</a></li>
-                            <li><a href="./apartados-web/subapartado-web/categoria.html">DORMITORIO</a></li>
-                            <li><a href="./apartados-web/subapartado-web/subcategoria.html" id="rebajas">REBAJAS</a></li>
-                        </ul>
-                    </li>
-                    <li class="apartado-web"><a href="{% url 'sobre-nosotros' %}">SOBRE NOSOTROS</a></li>
-                    <li class="apartado-web"><a href="{% url 'contacto' %}">CONTACTO</a></li>
-                </ul>
-
+        <nav class="navbar">
+            <div class="nav-toggle" id="_toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <img src="{% static 'img/logo.png' %}" alt="Logo Trovador" class="nav-logo">
+            <ul class="nav-items" id="_items">
+                <li class="apartado-web"><a href="{% url 'index' %}" id="actual">INICIO <span class="material-icons" id="_drch">keyboard_arrow_right</span></a></li>
+                <li class="apartado-web" id="desplegable">
+                    <a href="{% url 'productos' %}">PRODUCTOS <img src="{% static './img/ic-abajo.png' %}" height="10" id="_desplegable"><span class="material-icons" id="_drch">keyboard_arrow_right</span></a>
+                    <div class="contenido-desplegable" id="contenido_desplegable">
+                        <a href="./apartados-web/subapartado-web/subcategoria.html">NOVEDADES</a>
+                        <a href="./apartados-web/subapartado-web/categoria.html">BAÑO</a>
+                        <a href="./apartados-web/subapartado-web/subcategoria.html">COCINA</a>
+                        <a href="./apartados-web/subapartado-web/categoria.html">DORMITORIO</a>
+                        <a href="./apartados-web/subapartado-web/subcategoria.html" id="rebajas">REBAJAS</a>
+                    </div>
+                </li>
+                <li class="apartado-web"><a href="{% url 'sobre-nosotros' %}">SOBRE NOSOTROS <span class="material-icons" id="_drch">keyboard_arrow_right</span></a></li>
+                <li class="apartado-web"><a href="{% url 'contacto' %}">CONTACTO <span class="material-icons" id="_drch">keyboard_arrow_right</span></a></li>
+            </ul>
+            <div class="nav-icon">
                 {% if user.is_authenticated %}
-                <button id="cerrarSesion"><img src="img/ic-trovador.png" alt="Inicio sesión" class="icono" height="23"></button>
+                <button id="cerrarSesion"><img src="{% static 'img/ic-trovador.png' %}" alt="Inicio sesión" class="icono" height="23"></button>
                 {% else %}
                 <button id="inicioSesion"><img src="{% static 'img/ic-usuario.png' %}" alt="Inicio sesión" class="icono" height="20"></button>
                 {% endif %}
 
                 <button id="busqueda"><img src="{% static 'img/ic-lupa.png' %}" alt="Busqueda" class="icono" height="20"></button>
                 <button id="carritoCompra"><img src="{% static 'img/ic-carrito.png' %}" alt="Carrito" class="icono" height="20"></button>
-            </nav>
-        </header>
+            </div>
+        </nav>
+
         {% endblock navbar %}
 
         {% include 'includes/login_dialog.html' %}
+        {% include 'includes/carrito_dialog.html' %}
+        {% include 'includes/busqueda_dialog.html' %}
 
         {% block content %}
         {% endblock %}
