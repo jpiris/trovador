@@ -146,3 +146,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Para django-registration
 ACCOUNT_ACTIVATION_DAYS = 30 # Un mes ventana de activacion
+
+# Para que acepte el login de admin desde github.dev
+CSRF_TRUSTED_ORIGINS = ['https://*.github.dev']
