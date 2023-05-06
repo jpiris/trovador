@@ -8,12 +8,12 @@
     var carritoCompleto = document.getElementById('carrito-completo');
     var comprar = document.getElementById('comprar');
 
-    // Abrir el pop up LOGIN
+    // Abrir el pop up CARRITO
     carritoButton.addEventListener('click', function() {
         carritoDialog.showModal();
     });
 
-    // Cerrar el pop up LOGIN
+    // Cerrar el pop up CARRITO
     closeButton3.addEventListener('click', function() {
         carritoDialog.close();
     });
