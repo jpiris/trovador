@@ -13,5 +13,6 @@ urlpatterns = [
     path('sobre-nosotros/', views.sobrenosotros, name='sobre-nosotros'),
     path('carrito/', views.carrito, name='carrito'),
     path('rebajas/', views.rebajas, name='rebajas'),
+    path('busqueda/', views.busqueda, name='busqueda'),
 ] 
 

@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import redirect, render, get_object_or_404
 from django.db.models import Count
 from catalogo.models import Producto, Categoria
+from django.db.models import Q
 
 # Create your views here.
 def index(request):
@@ -45,3 +46,14 @@ def carrito(request):
 
 def rebajas(request):
     return render(request, 'rebajas.html')
+
+def busqueda(request):
+    query = request.GET.get('search')
+    lista_categorias = Categoria.objects.filter(Q(nombre__icontains=query) | Q(titulo__icontains=query))
+    lista_productos = Producto.objects.filter(Q(nombre__icontains=query))
+    return render(request, 'detalles/detalles_categoria.html', context={
+        'categoria': None,
+        'categorias_hijas': lista_categorias,
+        'productos': lista_productos,
+        'titulo_alternativo': 'RESULTADOS DE LA BUSQUEDA'
+    })

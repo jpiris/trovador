@@ -7,6 +7,8 @@
 
 {% block content %}
 {% load static %}
+
+{% if categoria %}
 <!-- SECTION:PRESENTACIÓN CATEGORÍAS-->
 <section class="presentacion" style="background-image:url({{ categoria.imagen1.url }}); background-size: cover;">
     <div class="texto-presentacion">
@@ -14,6 +16,7 @@
         <p style="width: 70%;">{{ categoria.descripcion }}</p>
     </div>
 </section>
+{% endif %}
 
 {% load get_productos %}
 <!-- SECTION: CARRUSEL -->
@@ -49,12 +52,15 @@
 {% endfor %}
 {% endif %}
 
-{% with productos_categoria|get_productos:categoria as productos %}
 {% if productos %}
 <!-- SECTION: SUBAPARTADO -->
 <section class="subapartado">
     <div class="tit-sub">
+        {% if titulo_alternativo %}
+        <h2>{{ titulo_alternativo }}</h2>
+        {% else %}
         <h2>{{ categoria.nombre }}</h2>
+        {% endif %}
     </div>
     <div class="contenedor-productos">
 
@@ -75,7 +81,5 @@
     
 </section>
 {% endif %}
-
-{% endwith %}
 
 {% endblock %}
