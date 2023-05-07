@@ -29,7 +29,7 @@
         <div class="producto">
             <div class="producto-img">
                 <a href="{{ producto.get_absolute_url }}">
-                    <img src="{{ producto.imagen1.url }}"  alt="">
+                    <img src="{{ producto.imagenes.0 }}"  alt="">
                 </a>
                 <button class="carrito-btn">Añadir al carrito</button>
             </div>
@@ -52,7 +52,7 @@
 
     <div class="contenedor-cat">
         {% with categorias_destacadas|index:0 as cat1 %}
-        <a href="{{ cat1.get_absolute_url }}" class="cat" style="background-image:url('{{ cat1.imagen1.url }}');">
+        <a href="{{ cat1.get_absolute_url }}" class="cat" style="background-image:url('{{ cat1.imagen.url }}');">
             <span>{{ cat1.nombre|upper }}</span>
         </a>
         {% endwith %}
@@ -63,7 +63,7 @@
 
             {% with categorias_destacadas|index:1 as cat2 %}
             <div class="cat">
-                <a href="{{ cat2.get_absolute_url }}" class="cat" style="background-image:url('{{ cat2.imagen1.url }}');">
+                <a href="{{ cat2.get_absolute_url }}" class="cat" style="background-image:url('{{ cat2.imagen.url }}');">
                     <span>{{ cat2.nombre|upper }}</span>
                 </a>
             </div>
@@ -71,7 +71,7 @@
 
             {% with categorias_destacadas|index:2 as cat3 %}
             <div class="cat">
-                <a href="{{ cat3.get_absolute_url }}" class="cat" style="background-image:url('{{ cat3.imagen1.url }}');">
+                <a href="{{ cat3.get_absolute_url }}" class="cat" style="background-image:url('{{ cat3.imagen.url }}');">
                     <span>{{ cat3.nombre|upper }}</span>
                 </a>
             </div>

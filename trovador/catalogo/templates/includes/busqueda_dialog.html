@@ -1,7 +1,9 @@
 {% load static %}
 
 <dialog id="busquedaDialog">
-    <button id="cerrar4"><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="20"></button>
+    <button id="cerrar4">
+        <img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="20">
+    </button>
     <form action="{% url 'busqueda' %}" method="get">
         <div class="apartadoBusqueda">
             <input type="search" id="search" name="search" placeholder="introduce productos a buscar">

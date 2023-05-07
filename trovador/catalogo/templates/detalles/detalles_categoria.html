@@ -10,7 +10,7 @@
 
 {% if categoria %}
 <!-- SECTION:PRESENTACIÓN CATEGORÍAS-->
-<section class="presentacion" style="background-image:url({{ categoria.imagen1.url }}); background-size: cover;">
+<section class="presentacion" style="background-image:url({{ categoria.imagen.url }}); background-size: cover;">
     <div class="texto-presentacion">
         <h1>{{ categoria.titulo }}</h1>
         <p style="width: 70%;">{{ categoria.descripcion }}</p>
@@ -37,7 +37,7 @@
             <!-- productos slider -->
             <div class="producto">
                 <div class="producto-img">
-                    <a href="{{ producto.get_absolute_url }}"><img src="{{ producto.imagen1.url }}"  alt=""></a>
+                    <a href="{{ producto.get_absolute_url }}"><img src="{{ producto.imagenes.0 }}"  alt=""></a>
                     <button class="carrito-btn">Añadir al carrito</button>
                 </div>
                 <div class="producto-info">
@@ -52,7 +52,6 @@
 {% endfor %}
 {% endif %}
 
-{% if productos %}
 <!-- SECTION: SUBAPARTADO -->
 <section class="subapartado">
     <div class="tit-sub">
@@ -67,7 +66,7 @@
         {% for p in productos %}
         <div class="producto">
             <div class="producto-img">
-                <img src="{{ p.imagen1.url }}"  alt="">
+                <a href="{{ p.get_absolute_url }}"><img src="{{ p.imagenes.0 }}"  alt="" ></a>
                 <button class="carrito-btn">Añadir al carrito</button>
             </div>
             <div class="producto-info">
@@ -80,6 +79,5 @@
     </div>
     
 </section>
-{% endif %}
 
 {% endblock %}
