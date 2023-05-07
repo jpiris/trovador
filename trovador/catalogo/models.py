@@ -16,10 +16,11 @@ class Categoria(models.Model):
     meta_titulo = models.SlugField(null=False, unique=True)
     destacado = models.BooleanField(help_text="Destacado, aparece en la pagina principal")
 
-    imagen1 = models.ImageField(upload_to='uploads/', blank=True)
-    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación del producto")
-
+    imagen = models.ImageField(upload_to='uploads/', blank=True)
     categoria_padre = models.ForeignKey('self', null=True, blank=True, related_name='categoria', on_delete=models.SET_NULL)
+    
+    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación de la categoria")
+    fecha_modificacion = models.DateField(auto_now=True, help_text="Fecha de modificación de la categoria")
 
     # Propiedades
     @property
@@ -41,6 +42,7 @@ class Categoria(models.Model):
 
 class Producto(models.Model):
     nombre = models.CharField(max_length=50, help_text="Nombre del producto")
+    referencia = models.CharField(max_length=20, help_text="Referencia del producto")
     precio = models.FloatField(help_text="Precio del producto")
     activo = models.BooleanField(help_text="Activo, aparece en catalogo")
     destacado = models.BooleanField(help_text="Destacado, aparece en la pagina principal")
@@ -49,14 +51,18 @@ class Producto(models.Model):
         MaxValueValidator(100),
         MinValueValidator(0),
     ])
-    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación del producto")
-    imagen1 = models.ImageField(upload_to='uploads/')
-    imagen2 = models.ImageField(upload_to='uploads/', blank=True)
-    imagen3 = models.ImageField(upload_to='uploads/', blank=True)
-
+    
     meta_titulo = models.SlugField(null=False, unique=True)
 
-    categoria = models.ManyToManyField(Categoria, related_name='cat')
+    categoria = models.ForeignKey(Categoria, default=None, null=True, on_delete=models.SET_NULL)
+    
+    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación")
+    fecha_modificacion = models.DateField(auto_now=True, help_text="Fecha de modificación")
+
+    # Propiedades
+    @property
+    def imagenes(self):
+        return ImagenProducto.objects.filter(producto=self)
 
     class Meta:
         ordering = ["-fecha_creacion"]
@@ -73,4 +79,15 @@ class Producto(models.Model):
         Cadena para representar el objeto Producto (en el sitio de Admin, etc.)
         """
         return self.nombre
+    
+class ImagenProducto(models.Model):
+    producto = models.ForeignKey(Producto, default=None, on_delete=models.CASCADE)
+    imagen = models.ImageField(upload_to='uploads/')
+    
+    fecha_creacion = models.DateField(auto_now_add=True, help_text="Fecha de creación de la categoria")
+    fecha_modificacion = models.DateField(auto_now=True, help_text="Fecha de modificación de la categoria")
+    
+    def __str__(self):
+        return self.imagen.url
+
 
