@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render, get_object_or_404
 from django.db.models import Count
 from catalogo.models import Producto, Categoria
 from django.db.models import Q
+from carrito.carrito import Carrito
 
 # Create your views here.
 def index(request):
@@ -56,4 +57,12 @@ def busqueda(request):
         'categorias_hijas': lista_categorias,
         'productos': lista_productos,
         'titulo_alternativo': f'{len(lista_productos)} RESULTADOS' if len(lista_productos) > 1 else f'{len(lista_productos)} RESULTADO'
+    })
+    
+def add_to_carrito(request, product_id):
+    carrito = Carrito(request)
+    carrito.add(product_id)
+    
+    return render(request, 'includes/carrito_dialog.html', context={
+        'carrito': carrito
     })
