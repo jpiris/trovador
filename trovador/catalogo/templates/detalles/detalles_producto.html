@@ -73,15 +73,12 @@
             <div class="producto">
                 <div class="producto-img">
                     <a href="{{ prod.get_absolute_url }}"><img src="{{ prod.imagenes.0 }}"  alt=""></a>
-                    <button 
-                    class="carrito-btn"
-                    
-                    >Añadir al carrito</button>
+                    <button class="carrito-btn">Añadir al carrito</button>
 
                 </div>
                 <div class="producto-info">
-                    <p>Nombre del producto</p>
-                    <span>00.00€</span>
+                    <p>{{ prod.nombre }}</p>
+                    <span>{{ prod.precio }}€</span>
                 </div>
             </div>
             {% endfor %}
@@ -91,8 +88,5 @@
     {% endif %}
     {% endwith %}
 
-    {% with titulo_alternativo='PRODUCTOS RELACIONADOS' productos=productos_relacionados|get_productos_relacionados:producto %}
-    {% include 'includes/carrusel_productos.html' %}
-    {% endwith %}
   
 {% endblock %}
