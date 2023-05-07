@@ -28,6 +28,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SESSION_COOKIE_AGE = 86400
+
+CARRITO_SESSION_ID = 'carrito'
 
 # Application definition
 
@@ -68,6 +71,7 @@ TEMPLATES = [
         'OPTIONS': {
             'context_processors': [
                 #'catalogo.context_processors.add_my_login_form',
+                'carrito.context_processors.carrito',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
