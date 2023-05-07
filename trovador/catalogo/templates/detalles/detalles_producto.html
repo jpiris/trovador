@@ -1,63 +1,98 @@
 {% extends "base_generic.html" %}
+{% load static %}
+{% load get_productos_relacionados %}
 
 {% block extra_css %}
-    <style>
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-between;
-            align-items: flex-start;
-            max-width: 960px;
-            margin: 0 auto;
-            padding: 20px;
-            box-sizing: border-box;
-        }
-
-        .col {
-            flex-basis: calc(50% - 10px);
-            margin-bottom: 20px;
-        }
-
-        .col p {
-            margin-bottom: 10px;
-        }
-
-        .col img {
-            display: block;
-            max-width: 100%;
-            height: auto;
-        }
-
-        .header {
-			width: 100%;
-			margin-bottom: 20px;
-			text-align: center;
-			font-size: 24px;
-			font-weight: bold;
-		}
-    </style>
-{% endblock %}
+<link rel="stylesheet" href="{% static 'css/apartados-web/s-articulo.css' %}">
+{% endblock extra_css %}
 
 {% block content %}
-    <div class="container">
-        <div class="header"><h1>Producto: {{ producto.nombre }}</h1></div>
+    <!-- SECTION ARTÍCULO -->
+    <section class="articulo">
+        <a href="javascript:history.back()"><img src="{% static 'img/ic-anterior.png' %}" height="10"> Volver a categoría</a>
+        <div class="contenedor-general">
+            <div class="articulo-fotos">
+                <div class="img-grande">
+                    <img src="{{ producto.imagenes.0 }}" id="grande" alt="" srcset="">
+                </div>
+                <div class="contenedor-miniaturas">
+                    <div class="img-miniatura">
+                        {% for imagen in producto.imagenes %}
+                        <img src="{{ imagen }}" class="miniatura" alt="" srcset="">
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+            <div class="articulo-info">
+                <div class="ref">
+                    <p>Nº REFERENCIA: <span>{{ producto.referencia }}</span></p>
+                    <p>CATEGORÍA: <span><a href="{{ producto.categoria.get_absolute_url }}"> {{producto.categoria}} </a></span></p>
+                </div>
+                <h3>{{ producto.nombre }}</h3>
+                <h4>{{ producto.precio }}€</h4>
+                <p class="descripcion">{{ producto.descripcion_corta }}</p>
+                <div class="ficha">
+                    <h5>FICHA TÉCNICA</h5>
+                    <p> 
+                        {{ producto.descripcion_larga }}
+                    </p>
 
-        <div class="col">
-            <img src={{ producto.imagen1.url }} alt="Imagen de ejemplo">
+                        
+                </div>
+                <div class="add-carrito">
+                    <p>CANTIDAD</p>
+                    <div>
+                        <div>1</div>
+                        <button 
+                            class="btn-carrito"
+                            hx-get="{% url 'add_to_carrito' producto.id %}"
+                            hx-target="#carritoDialog"
+                            hx-swap="outerHTML">
+                            AÑADIR AL CARRITO
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% with productos_relacionados|get_productos_relacionados:producto as productos_relacionados %}
+    {% if productos_relacionados %}
+    <!-- SECTION: CARRUSEL -->
+    <section class="carrusel">
+        <div class="carrusel-titulo">
+            <h2>PRODUCTOS RELACIONADOS</h2>
         </div>
 
-        <div class="col">
-            <p><strong>Nombre:</strong> <a href="">{{ producto.nombre }}</a></p> <!-- author detail link not yet defined -->
-            <p><strong>Descripcion corta:</strong> {{ producto.descripcion_corta }}</p>
-            <p><strong>Descripcion larga:</strong> {{ producto.descripcion_larga }}</p>
-            <p><strong>Precio:</strong> {{ producto.precio }}</p>
-            <p><strong>Categorias:</strong> 
-                {% for categoria in producto.categoria.all %}
-                    <a href={{ categoria.get_absolute_url }}> <span>{{ categoria.nombre }}</span> </a>
-                {% endfor %}
-                {% comment %} {{ producto.categoria.all|join:", " }} {% endcomment %}
-            </p>
+        <button class="pre-btn"><img src="{% static 'img/ic-anterior.png' %}" alt="" width="50"></button>
+        <button class="nxt-btn"><img src="{% static 'img/ic-siguiente.png' %}" alt="" width="50"></button>
+        <div class="contenedor-carrusel">
+
+            {% for prod in productos_relacionados %}
+            <!-- productos slider -->
+            <div class="producto">
+                <div class="producto-img">
+                    <a href="{{ prod.get_absolute_url }}"><img src="{{ prod.imagenes.0 }}"  alt=""></a>
+                    <button 
+                    class="carrito-btn"
+                    
+                    >Añadir al carrito</button>
+
+                </div>
+                <div class="producto-info">
+                    <p>Nombre del producto</p>
+                    <span>00.00€</span>
+                </div>
+            </div>
+            {% endfor %}
+            
         </div>
-    </div>
+    </section>
+    {% endif %}
+    {% endwith %}
+
+    {% with titulo_alternativo='PRODUCTOS RELACIONADOS' productos=productos_relacionados|get_productos_relacionados:producto %}
+    {% include 'includes/carrusel_productos.html' %}
+    {% endwith %}
   
 {% endblock %}
