@@ -4,40 +4,27 @@
 <dialog id="carritoDialog">
     <button id="cerrar3"><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="20"></button>
     <div class="apartadosCarrito">
-        <h2>PRODUCTOS SELECCIONADOS</h2>
-        <div class="producto-carrito">
-            <img class="prod-seleccionado"src="{% static './img/productos/Juego toallas Lavabo C-04.png' %}" alt="">
-            <div class="prod-texto">
-                <p>Nombre del producto</p>
-                <span>00.00€</span>
-                <button><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="15"></button>
+        <h2>PRODUCTOS SELECCIONADOS {{ carrito|length }}</h2>
+
+        {% if carrito %}
+            {% for item in carrito %}
+            {% with item.producto as producto %}
+            <div class="producto-carrito">
+                <img class="prod-seleccionado"src="{{ producto.imagen }}" alt="">
+                <div class="prod-texto">
+                    <p>{{ producto.nombre }}</p>
+                    <span>{{ producto.precio }}€</span>
+                    <button><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="15"></button>
+                </div>
             </div>
-        </div>
-        <hr>
-        <div class="producto-carrito">
-            <img class="prod-seleccionado"src="{% static '/img/productos/Juego toallas Lavabo C-04.png' %}" alt="">
-            <div class="prod-texto">
-                <p>Nombre del producto</p>
-                <span>00.00€</span>
-                <button><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="15"></button>
-            </div>
-        </div>
-        <hr>
-        <!-- repetir por cuantos productos queramos poner -->
-        <div class="producto-carrito">
-            <img class="prod-seleccionado"src="{% static './img/productos/Juego toallas Lavabo C-04.png' %}" alt="">
-            <div class="prod-texto">
-                <p>Nombre del producto</p>
-                <span>00.00€</span>
-                <button><img src="{% static 'img/ic-cerrar.png' %}" alt="Carrito" class="icono" height="15"></button>
-            </div>
-        </div>
-        <hr>
+            <hr>
+            {% endwith %}
+            {% endfor %}
+        {% endif %}
         
-        <div class="botones">
-            <button id="carrito-completo"><a href="{% url 'carrito' %}">IR AL CARRITO</a></button>
-            <button id="comprar">REALIZAR COMPRA</button>
-        </div>
     </div>
 </dialog>
+
+<script defer src="{% static './js/popup-carrito.js' %}"></script>
+
 {% endblock carritoDialog %}

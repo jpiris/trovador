@@ -1,5 +1,6 @@
 from django.conf import settings
 from catalogo.models import Producto
+from django.forms.models import model_to_dict
 
 class Carrito(object):
     def __init__(self, request):
@@ -13,7 +14,14 @@ class Carrito(object):
         
     def __iter__(self):
         for p in self.carrito.keys():
-            self.carrito[str(p)]['producto'] = Producto.objects.get(pk=p)
+            producto = Producto.objects.get(pk=p)
+            self.carrito[str(p)]['producto'] = model_to_dict(producto)
+            self.carrito[str(p)]['producto']['imagen'] = str(producto.imagenes[0])
+
+        for item in self.carrito.values():
+            item['precio_total'] = item['producto']['precio'] * item['cantidad']
+            
+            yield item
             
     def __len__(self):
         return sum(item['cantidad'] for item in self.carrito.values())
@@ -30,8 +38,8 @@ class Carrito(object):
             
         if update_quantity:
             self.carrito[product_id]['cantidad'] += int(quantity)
-            
-            if self.carito[product_id]['cantidad'] == 0:
+
+            if self.carrito[product_id]['cantidad'] == 0:
                 self.remove(product_id)
                 
         self.save()
